@@ -1,0 +1,47 @@
+.section-unauth-body {
+    position: fixed;
+    width: 130vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('../../../../public/images/airplane.jpeg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.section-unauth {
+    width: 100%;
+    max-width: 920px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    background-color: var(--bg-unauth-section);
+    color: #fff;
+    top: 45%;
+    left: 45%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    box-shadow: -20px 26px 32px 14px #221f1f;
+    border-radius: 15px;
+}
+
+.title_unauth {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 45px;
+    color: rgb(200, 34, 34);
+}
+
+.sub_title_unauth {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(24, 20, 20);
+}

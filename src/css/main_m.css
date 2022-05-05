@@ -1,0 +1,33 @@
+/* SERVICES */
+@import url('./services/normalize.css');
+@import url('./services/normalize.css');
+@import url('./services/fonts.css');
+@import url('./services/colors.css');
+@import url('./services/tags.css');
+
+/* LOGIN */
+@import url('./services/login/login-form.css');
+
+/* SERVICES */
+@import url('./services/header.css');
+@import url('./services/navbar.css');
+@import url('./services/sidebar.css');
+@import url('./services/settings/settings.css');
+@import url('./services/settings/sellers-table-settings.css');
+@import url('./services/home/home.css');
+@import url('./services/unauthorized/unauthorized.css');
+@import url('./services/missing/missing.css');
+
+/* ELEMENTS */
+@import url('./elements/btn.css');
+@import url('./elements/tables.css');
+
+@import url('./main.css');
+@import url('./alerts.css');
+@import url('./services.css');
+@import url('./loader.css');
+
+@import url('./other.css');
+@import url('./templatemo-style.css');
+@import url('./events.css');
+@import url('./mediaqueries.css');

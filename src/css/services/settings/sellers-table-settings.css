@@ -1,0 +1,17 @@
+.settings-table-box {
+    width: 900px;
+    height: 420px;
+    /* background: var(--bg-settings-form); */
+    color: #fff;
+    top: 35%;
+    left: 60%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.settings-table-inner {
+    box-shadow: -20px 26px 32px 14px #221f1f;
+    border-radius: 15px;
+}

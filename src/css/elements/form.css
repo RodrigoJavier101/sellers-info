@@ -1,0 +1,230 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+.form-control::-moz-placeholder {
+	color: #ffffff;
+	opacity: 1;
+}
+
+.form-control, output {
+    display: block;
+    font-size: 14px;
+    line-height: 1.78;
+    color: #555
+}
+
+.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 8px 20px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+}
+
+.form-control::-moz-placeholder {
+    color: #999;
+    opacity: 1
+}
+
+.form-control:-ms-input-placeholder {
+    color: #999
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #999
+}
+
+.form-control::-ms-expand {
+    border: 0;
+    background-color: transparent
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #eee;
+    opacity: 1
+}
+
+.form-control[disabled], fieldset[disabled] .form-control {
+    cursor: not-allowed
+}
+
+.form-group {
+    margin-bottom: 15px
+}
+
+.form-control-static {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-bottom: 0;
+    min-height: 38px
+}
+
+.form-control-static.input-lg, .form-control-static.input-sm, .input-group-lg>.form-control-static.form-control, .input-group-lg>.form-control-static.input-group-addon, .input-group-lg>.input-group-btn>.form-control-static.btn, .input-group-sm>.form-control-static.form-control, .input-group-sm>.form-control-static.input-group-addon, .input-group-sm>.input-group-btn>.form-control-static.btn {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.form-group-sm .form-control {
+    height: 30px;
+    padding: 5px 14px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 2px
+}
+
+.form-group-sm select.form-control {
+    height: 30px;
+    line-height: 30px
+}
+
+.form-group-sm select[multiple].form-control, .form-group-sm textarea.form-control {
+    height: auto
+}
+
+.form-group-sm .form-control-static {
+    height: 30px;
+    min-height: 36px;
+    padding: 6px 14px;
+    font-size: 12px;
+    line-height: 1.5
+}
+
+.form-group-lg .form-control {
+    height: 46px;
+    padding: 10px 24px;
+    font-size: 18px;
+    line-height: 1.33333;
+    border-radius: 2px
+}
+
+.form-group-lg select.form-control {
+    height: 46px;
+    line-height: 46px
+}
+
+.form-group-lg select[multiple].form-control, .form-group-lg textarea.form-control {
+    height: auto
+}
+
+.form-group-lg .form-control-static {
+    height: 46px;
+    min-height: 42px;
+    padding: 11px 24px;
+    font-size: 18px;
+    line-height: 1.33333
+}
+
+
+.form-control-feedback {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    pointer-events: none
+}
+
+.form-group-lg .form-control+.form-control-feedback, .input-group-lg+.form-control-feedback, .input-group-lg>.form-control+.form-control-feedback, .input-group-lg>.input-group-addon+.form-control-feedback, .input-group-lg>.input-group-btn>.btn+.form-control-feedback, .input-lg+.form-control-feedback {
+    width: 46px;
+    height: 46px;
+    line-height: 46px
+}
+
+.form-group-sm .form-control+.form-control-feedback, .input-group-sm+.form-control-feedback, .input-group-sm>.form-control+.form-control-feedback, .input-group-sm>.input-group-addon+.form-control-feedback, .input-group-sm>.input-group-btn>.btn+.form-control-feedback, .input-sm+.form-control-feedback {
+    width: 30px;
+    height: 30px;
+    line-height: 30px
+}
+
+
+
+.form-horizontal .checkbox, .form-horizontal .checkbox-inline, .form-horizontal .radio, .form-horizontal .radio-inline {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 9px
+}
+
+.form-horizontal .checkbox, .form-horizontal .radio {
+    min-height: 33px
+}
+
+.form-horizontal .form-group {
+    margin-left: -15px;
+    margin-right: -15px
+}
+
+.form-horizontal .form-group:after, .form-horizontal .form-group:before {
+    content: " ";
+    display: table
+}
+
+.form-horizontal .form-group:after {
+    clear: both
+}
+
+
+
+.form-horizontal .has-feedback .form-control-feedback {
+    right: 15px
+}
+
+.form-control {
+    box-shadow: none
+}
+
+.form-control:focus {
+    outline: 0;
+    box-shadow: none;
+    border-color: #000
+}
+
+
+.form-control {
+    background-color: #54657d;
+    color: #fff;
+    border: 0;
+}
+
+.form-control {
+    padding: 19px 18px;
+    border-radius: 0;
+    height: 50px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+.form-control:focus {
+    background-color: #60738e;
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 0 0 0.1rem rgb(180, 206, 233, 0.5);
+}
+
+.form-group label {
+    color: #fff;
+    margin-bottom: 10px;
+}
