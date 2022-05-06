@@ -46,7 +46,7 @@
 	animation-delay: 0s;
 	animation-delay: 0s;
 	animation-delay: 0s;
-	background-image: url('../../public/images/apple-icon-180x180.png');
+	background-image: var(--bg-pic-icon-url);
 	background-size: 100% 100%;
 }
 

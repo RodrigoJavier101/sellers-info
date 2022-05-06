@@ -2,7 +2,7 @@
 @import url('./services/normalize.css');
 @import url('./services/normalize.css');
 @import url('./services/fonts.css');
-@import url('./services/colors.css');
+@import url('./services/variables.css');
 @import url('./services/tags.css');
 
 /* LOGIN */
