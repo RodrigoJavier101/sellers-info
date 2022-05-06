@@ -400,7 +400,7 @@ button:focus {
   -o-border-radius: 0;
   border-radius: 0;
   padding: 15px;
-  background: var(--bg-pic-templatesmo-url) 98% no-repeat #50657b;
+  background: var(--bg-pic-templatesmo-urwl) 98% no-repeat #50657b;
 }
 
 .custom-select:focus {

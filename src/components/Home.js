@@ -1,3 +1,4 @@
+import { React } from 'react'
 import { useContext } from "react";
 import AuthContext from "../context/AuthProvider";
 import SectionHome from '../components/section-home/SectionHome'

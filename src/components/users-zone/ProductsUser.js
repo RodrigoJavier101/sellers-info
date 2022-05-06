@@ -1,5 +1,6 @@
+import { React } from 'react'
 import HeaderUser from './HeaderUser';
-import Loader from '../Loader';
+// import Loader from '../Loader';
 import $ from 'jquery'
 
 

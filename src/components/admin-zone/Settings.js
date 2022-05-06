@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import HeaderAdmin from './HeaderAdmin'
-import Loader from '../Loader'
+// import Loader from '../Loader'
 import axios from '../../api/axios';
 import $ from 'jquery'
 
@@ -95,7 +95,6 @@ const Settings = () => {
                             </tr>
                         </thead>
                         <tbody>
-                          ()
                           
                             <tr>
                                 <th scope="row"><b>#122349</b></th>
