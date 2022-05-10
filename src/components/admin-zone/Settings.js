@@ -2,26 +2,21 @@ import React, { useState } from 'react'
 import HeaderAdmin from './HeaderAdmin'
 // import Loader from '../Loader'
 import axios from '../../api/axios';
-import $ from 'jquery'
 
-const LOGIN_URL = '/api/users/save';
+const SAVE_URL = '/api/users/save';
+const LIST_URL = '/api/users/list';
 
-function handleToggle(e) {
-    e.preventDefault();
-    $('#main-collapse').toggleClass("open")
-    $('.sidebar').toggleClass("open");
-    setTimeout(console.log('toggleing'), 200)
-}
 const Settings = () => {
     const [fullname, setFullname] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [sellers, setSellers] = useState([]);
     const [msg, setMsg] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await axios.post(LOGIN_URL,
+        const response = await axios.post(SAVE_URL,
             JSON.stringify({
                 name: e.target.fullname.value,
                 username: e.target.username.value,
@@ -38,11 +33,23 @@ const Settings = () => {
         document.getElementById('input-username').value = '';
         setPassword('');
         document.getElementById('input-password').value = '';
+
+        const response_ = await axios.get(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
+        setSellers(response_['data']);
+
     }
+
+
+    const listSellers = async (e) => {
+        e.preventDefault();
+        const response = await axios.get(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
+        setSellers(response['data']);
+    };
+
 
     return (
         <>
-            <HeaderAdmin handleToggle={handleToggle} />
+            <HeaderAdmin />
             <p className={msg ? "errmsg" : "offscreen"} aria-live="assertive">{msg}</p>
             <div className='settings-body'>
                 <div className="settingsbox">
@@ -78,98 +85,65 @@ const Settings = () => {
 
                         <button className="btn btn-success btn-block"> Agregar </button>
                     </form>
+                    <hr />
 
                 </div>
                 <div className="settings-table-box">
                     {/* <h2 className="tm-block-title">Sellers List</h2> */}
-                    <table className="table settings-table-inner">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">STATUS</th>
-                                <th scope="col">SELLER NAME</th>
-                                <th scope="col">LOCATION</th>
-                                <th scope="col">NO ITEMS</th>
-                                <th scope="col">AUTH DATE</th>
-                                <th scope="col">DELETE</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                          
-                            <tr>
-                                <th scope="row"><b>#122349</b></th>
-                                <td>
-                                    <div className="tm-status-circle moving">
-                                    </div>Moving
-                                </td>
-                                <td><b>Oliver Trag</b></td>
-                                <td><b>London, UK</b></td>
-                                <td><b>485 km</b></td>
-                                <td>16:00, 12 NOV 2018</td>
-                                <td><button>delete seller</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><b>#122348</b></th>
-                                <td>
-                                    <div className="tm-status-circle pending">
-                                    </div>Pending
-                                </td>
-                                <td><b>Jacob Miller</b></td>
-                                <td><b>London, UK</b></td>
-                                <td><b>360 km</b></td>
-                                <td>11:00, 10 NOV 2018</td>
-                                <td><button>delete seller</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><b>#122347</b></th>
-                                <td>
-                                    <div className="tm-status-circle cancelled">
-                                    </div>Cancelled
-                                </td>
-                                <td><b>George Wilson</b></td>
-                                <td><b>London, UK</b></td>
-                                <td><b>340 km</b></td>
-                                <td>12:00, 22 NOV 2018</td>
-                                <td><button>delete seller</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><b>#122346</b></th>
-                                <td>
-                                    <div className="tm-status-circle moving">
-                                    </div>Moving
-                                </td>
-                                <td><b>William Aung</b></td>
-                                <td><b>London, UK</b></td>
-                                <td><b>218 km</b></td>
-                                <td>15:00, 10 NOV 2018</td>
-                                <td><button>delete seller</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><b>#122345</b></th>
-                                <td>
-                                    <div className="tm-status-circle pending">
-                                    </div>Pending
-                                </td>
-                                <td><b>Harry Ryan</b></td>
-                                <td><b>London, UK</b></td>
-                                <td><b>280 km</b></td>
-                                <td>15:00, 11 NOV 2018</td>
-                                <td><button>delete seller</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><b>#122344</b></th>
-                                <td>
-                                    <div className="tm-status-circle pending">
-                                    </div>Pending
-                                </td>
-                                <td><b>Michael Jones</b></td>
-                                <td><b>London, UK</b></td>
-                                <td><b>218 km</b></td>
-                                <td>18:00, 12 OCT 2018</td>
-                                <td><button>delete seller</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+
+
+                    {sellers.length > 0 ?
+                        <table className="table settings-table-inner table-hover">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">SELLER NAME</th>
+                                    <th scope="col">USER</th>
+                                    <th scope="col">PASSWORD</th>
+                                    <th scope="col">USER_ID</th>
+                                    <th scope="col">AUTH DATE</th>
+                                    <th scope="col">DELETE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {sellers.map((el, index) => {
+                                    let text = '', classic = '';
+                                    if (el['id'] % 2 === 0) {
+                                        classic = 'cancelled';
+                                        text = 'Stopped';
+                                    }
+                                    if (el['id'] % 2 !== 0) {
+                                        classic = 'moving';
+                                        text = 'Active';
+                                    }
+                                    return (
+                                        /* moving  cancelled   pending*/
+                                        < tr className='warning' key={el['id']}>
+                                            <th key={`${el['id']}row`} scope="row"><b>{index}</b></th>
+                                            <td key={`${el['id']}status`}>
+                                                <div className={`tm-status-circle ${classic}`}></div>
+                                                <code><em><b>{text}</b></em></code>
+                                            </td>
+                                            <td key={`${el['id']}name`}><b>{el['name']}</b></td>
+                                            <td key={`${el['id']}username`}><b>{el['username']}</b></td>
+                                            <td key={`${el['id']}password`}><b>{el['password']}</b></td>
+                                            <td key={`${el['id']}`}><b>{el['refresh_token']}</b></td>
+                                            <td key={`${el['id']}date`}>12:00, 22 NOV 2018</td>
+                                            <td key={`${el['id']}btn`}><button>admin seller</button></td>
+                                        </tr>
+                                    )
+                                })}
+
+                            </tbody>
+                        </table>
+                        :
+                        <div className="table settings-table-inner">
+                            <button onClick={listSellers} className="btn btn-info btn-block"> Listar </button>
+                        </div>
+                    }
                 </div>
             </div>
         </>
@@ -177,3 +151,4 @@ const Settings = () => {
 }
 
 export default Settings
+

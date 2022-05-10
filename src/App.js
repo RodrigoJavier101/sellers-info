@@ -16,6 +16,8 @@ import RequireAuth from './components/RequireAuth';
 
 
 const ROLES = { 'User': 2001, 'Admin': 5001 }
+// const ROLES = { 'User': process.env.ROLE_USER, 'Admin': process.env.ROLE_ADMIN }
+
 
 function App() {
 

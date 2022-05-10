@@ -1,34 +1,16 @@
 import React from 'react'
 import HeaderAdmin from './HeaderAdmin'
-import $ from 'jquery'
 
-function handleToggle(e) {
-    e.preventDefault();
-    $('#main-collapse').toggleClass("open")
-    $('.sidebar').toggleClass("open");
-    setTimeout(console.log('toggleing'), 200)
-}
 const Admin = () => {
     return (
         <>
             <div id="main-collapse">
                 {/* <Loader /> */}
-                <HeaderAdmin handleToggle={handleToggle} />
-
+                <HeaderAdmin />
                 <div className="" id="home">
-
                     <div className="container">
-
-                        {/* <div className="row">
-                            <div className="col">
-                                <p className="text-white mt-5 mb-5"></p>
-                            </div>
-                        </div> */}
-
                         <div className="col-12 tm-block-col">
                             <h2 className='tm-block-title'>Charts Administrator</h2>
-
-
 
 {/* 
 

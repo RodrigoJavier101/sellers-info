@@ -1,11 +1,12 @@
 import { useNavigate, Link } from "react-router-dom"
-import { React, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthProvider";
 import axios from '../../api/axios';
+import $ from 'jquery'
 
 const LOGIN_URL = '/api/users/list';
 
-const HeaderAdmin = ({ handleToggle }) => {
+const HeaderAdmin = () => {
     const navigate = useNavigate();
     const { setAuth, auth } = useContext(AuthContext);
     const [sellersList, setSellersList] = useState([])
@@ -21,6 +22,14 @@ const HeaderAdmin = ({ handleToggle }) => {
             );
             setSellersList(response.data);
         } catch (error) { console.log(`ERORR en el axios`, error); }
+    }
+
+
+    function handleToggle(e) {
+        e.preventDefault();
+        $('#main-collapse').toggleClass("open")
+        $('.sidebar').toggleClass("open");
+        setTimeout(console.log('toggleing'), 200)
     }
 
     return (

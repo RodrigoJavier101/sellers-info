@@ -1,8 +1,8 @@
 /* SERVICES */
 @import url('./services/normalize.css');
-@import url('./services/normalize.css');
-@import url('./services/fonts.css');
 @import url('./services/variables.css');
+@import url('./services/fonts.css');
+@import url('./services/colors.css');
 @import url('./services/tags.css');
 
 /* LOGIN */
@@ -12,8 +12,10 @@
 @import url('./services/header.css');
 @import url('./services/navbar.css');
 @import url('./services/sidebar.css');
+
 @import url('./services/settings/settings.css');
 @import url('./services/settings/sellers-table-settings.css');
+
 @import url('./services/home/home.css');
 @import url('./services/unauthorized/unauthorized.css');
 @import url('./services/missing/missing.css');

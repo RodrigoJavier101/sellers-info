@@ -1,4 +1,4 @@
 @font-face {
     font-family: uno;
-    src: var(--font-1);
+    src: url('../../../public/fonts/GowunBatang-Bold.ttf');
 }

@@ -6,7 +6,7 @@ table {
 
 .table {
     background-color: #50697f;
-    color: #fff;
+    color: var(--table-text);
     font-size: 85%;
     margin-bottom: 0;
     width: 100%;
@@ -50,7 +50,7 @@ thead {
 
 .table td,
 .table th {
-    border-top: 1px solid #415a70;
+    border-top: 1px solid var(--table-border-color);
     padding: 15px 25px;
     vertical-align: middle;
 }
@@ -66,7 +66,7 @@ thead {
 }
 
 .table-hover tbody tr:hover {
-    color: #a0c0de;
+    color: var(--table-text-hover);
 }
 
 

@@ -4,7 +4,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      background: var(--bg-pic-airplane-url);
+      background: url('../../../../public/images/airplane.jpeg');
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-position: center;

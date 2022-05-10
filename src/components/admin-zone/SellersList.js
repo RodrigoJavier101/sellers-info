@@ -1,20 +1,12 @@
 import React from 'react'
 import HeaderAdmin from './HeaderAdmin'
-import $ from 'jquery'
 
-function handleToggle(e) {
-    e.preventDefault();
-    $('#main-collapse').toggleClass("open")
-    $('.sidebar').toggleClass("open");
-    setTimeout(console.log('toggleing'), 200)
-}
 const SellersList = () => {
     return (
         <>
             <div id="main-collapse">
                 {/* <Loader /> */}
-                <HeaderAdmin handleToggle={handleToggle} />
-
+                <HeaderAdmin />
                 <div className="" id="home">
 
                     <div className="container">

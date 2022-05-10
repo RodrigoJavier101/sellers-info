@@ -1,10 +1,9 @@
-import { React } from 'react'
 import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthProvider";
+import $ from 'jquery'
 
-
-const Header = ({ handleToggle }) => {
+const Header = () => {
     const { setAuth, auth } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -13,6 +12,14 @@ const Header = ({ handleToggle }) => {
         setAuth({});
         navigate('/login');
     }
+
+    function handleToggle(e) {
+        e.preventDefault();
+        $('#main-collapse').toggleClass("open")
+        $('.sidebar').toggleClass("open");
+        setTimeout(console.log('toggleing'), 200)
+    }
+    
 
     return (
 

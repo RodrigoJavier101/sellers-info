@@ -1,7 +1,5 @@
-import { React } from 'react'
 import HeaderUser from './HeaderUser';
 // import Loader from '../Loader';
-import $ from 'jquery'
 
 
 // (() => {
@@ -13,20 +11,12 @@ import $ from 'jquery'
 // }
 // )();
 
-
-function handleToggle(e) {
-    e.preventDefault();
-    $('#main-collapse').toggleClass("open")
-    $('.sidebar').toggleClass("open");
-    setTimeout(console.log('toggleing'), 200)
-}
-
 const Users = () => {
     return (
         <>
             <div id="main-collapse">
                 {/* <Loader /> */}
-                <HeaderUser handleToggle={handleToggle} />
+                <HeaderUser />
 
                 <div className="" id="home">
 

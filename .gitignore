@@ -2,10 +2,9 @@
 
 # dependencies
 /node_modules
-.envnpm stnopm
 /.pnp
 .pnp.js
-.env
+
 # testing
 /coverage
 

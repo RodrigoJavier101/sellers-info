@@ -1,11 +1,11 @@
-import { React, useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import useAuth from '../hooks/useAuth';
 import { useNavigate, useLocation } from 'react-router-dom';
-
 import axios from '../api/axios';
+
 const LOGIN_URL = '/api/users';
 
-function Login({ Login, error }) {
+function Login() {
 
    const { setAuth } = useAuth();
 
