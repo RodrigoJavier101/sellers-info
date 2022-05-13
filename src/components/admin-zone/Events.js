@@ -5,9 +5,9 @@ import HeaderAdmin from './HeaderAdmin'
 const Events = () => {
   return (
     <>
+      <HeaderAdmin />
       <div id="main-collapse">
         {/* <Loader /> */}
-        <HeaderAdmin />
         <div className="" id="home">
           {/* <div className="container"> */}
           {/* <div id="main-collapse"> */}

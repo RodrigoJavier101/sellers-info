@@ -16,6 +16,8 @@
 @import url('./services/settings/settings.css');
 @import url('./services/settings/sellers-table-settings.css');
 
+@import url('./services/sellers-list/sellers-list.css');
+
 @import url('./services/home/home.css');
 @import url('./services/unauthorized/unauthorized.css');
 @import url('./services/missing/missing.css');

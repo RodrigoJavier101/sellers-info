@@ -50,8 +50,8 @@ const Settings = () => {
     return (
         <>
             <HeaderAdmin />
-            <p className={msg ? "errmsg" : "offscreen"} aria-live="assertive">{msg}</p>
-            <div className='settings-body'>
+            <div className='settings-body' onMouseMove={listSellers}>
+                <p className={msg ? "errmsg" : "offscreen"} aria-live="assertive">{msg}</p>
                 <div className="settingsbox">
                     <h1 className='title_settings'>Add a seller here</h1>
                     <form onSubmit={handleSubmit}>
@@ -90,9 +90,6 @@ const Settings = () => {
                 </div>
                 <div className="settings-table-box">
                     {/* <h2 className="tm-block-title">Sellers List</h2> */}
-
-
-
                     {sellers.length > 0 ?
                         <table className="table settings-table-inner table-hover">
 
@@ -141,7 +138,7 @@ const Settings = () => {
                         </table>
                         :
                         <div className="table settings-table-inner">
-                            <button onClick={listSellers} className="btn btn-info btn-block"> Listar </button>
+                            {/* <button onClick={listSellers} className="btn btn-info btn-block"> Listar </button> */}
                         </div>
                     }
                 </div>

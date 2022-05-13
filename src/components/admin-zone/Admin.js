@@ -4,15 +4,15 @@ import HeaderAdmin from './HeaderAdmin'
 const Admin = () => {
     return (
         <>
+            <HeaderAdmin />
             <div id="main-collapse">
                 {/* <Loader /> */}
-                <HeaderAdmin />
                 <div className="" id="home">
                     <div className="container">
                         <div className="col-12 tm-block-col">
                             <h2 className='tm-block-title'>Charts Administrator</h2>
 
-{/* 
+                            {/* 
 
  <div>
                                 <h2 className="tm-block-title">Sellers List</h2>
