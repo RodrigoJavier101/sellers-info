@@ -4,6 +4,8 @@
 @import url('./services/fonts.css');
 @import url('./services/colors.css');
 @import url('./services/tags.css');
+@import url('./services/background.css');
+@import url('./services/auth/auth.css');
 
 /* LOGIN */
 @import url('./services/login/login-form.css');

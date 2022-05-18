@@ -1,4 +1,4 @@
-.sellers-list-body {
+/* .sellers-list-body {
     position: fixed;
     width: 130vw;
     height: 100%;
@@ -9,11 +9,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
+} */
 
 .sellers-list-box {
     position: absolute;
-    width: 77vw;
+    width: 50vw;
     height: 100vh;
     background: none;
     top: 45%;

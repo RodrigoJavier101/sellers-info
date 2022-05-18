@@ -4,7 +4,7 @@ import AuthContext from "../../context/AuthProvider";
 import axios from '../../api/axios';
 import $ from 'jquery'
 
-const LOGIN_URL = '/api/users/list';
+const USERS_LIST_URL = '/api/users/list';
 
 const HeaderAdmin = () => {
     const navigate = useNavigate();
@@ -12,18 +12,17 @@ const HeaderAdmin = () => {
     const [sellersList, setSellersList] = useState([])
     const logout = async () => {
         setAuth({});
-        navigate('/login');
+        navigate('/');
     }
 
     const handleSettingsData = async () => {
         try {
-            const response = await axios.get(LOGIN_URL,
+            const response = await axios.get(USERS_LIST_URL,
                 { headers: { 'Content-Type': 'application/json' }, }
             );
             setSellersList(response.data);
         } catch (error) { console.log(`ERORR en el axios`, error); }
     }
-
 
     function handleToggle(e) {
         e.preventDefault();
@@ -31,6 +30,8 @@ const HeaderAdmin = () => {
         $('.sidebar').toggleClass("open");
         setTimeout(console.log('toggleing'), 200)
     }
+
+
 
     return (
         <header className="">
@@ -86,17 +87,6 @@ const HeaderAdmin = () => {
                     </ul>
 
                     <nav className="nav-footer">
-                        <p className="nav-footer-social-buttons">
-                            <a className="fa-icon" href="https://www.instagram.com/" title="">
-                                <i className="fas fa-user-astronaut"></i>
-                            </a>
-                            <a className="fa-icon" href="https://dribbble.com/" title="">
-                                <i className="fas fa-wpexplorer"></i>
-                            </a>
-                            <a className="fa-icon" href="https://twitter.com/" title="">
-                                <i className="fas fa-save"></i>
-                            </a>
-                        </p>
                         <a href="http://www.blcorporations.com/" title="website_" target="_blank" rel="noreferrer">
                             <p>© BL Corporations</p>
                         </a>

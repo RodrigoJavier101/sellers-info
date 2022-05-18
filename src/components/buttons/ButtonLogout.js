@@ -9,7 +9,7 @@ const ButtonLogout = () => {
 
     const logout = async () => {
         setAuth({});
-        navigate('/login');
+        navigate('/');
     }
     
     return (

@@ -11,7 +11,8 @@ function Login() {
 
    const navigate = useNavigate();
    const location = useLocation();
-   const from = location.state?.from?.pathname || "/";
+   const from = location.state?.from?.pathname || "/home";
+   const auth = location.state?.from?.pathname || "/auth";
 
    const userRef = useRef();
    const errRef = useRef();
@@ -23,6 +24,11 @@ function Login() {
    useEffect(() => { userRef.current.focus(); }, [])
 
    useEffect(() => { setErrMsg(''); }, [user, pwd])
+
+   const handleToAuth = (e) => {
+      e.preventDefault();
+      navigate(auth, { replace: true });
+   }
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -85,6 +91,8 @@ function Login() {
 
                <button className='btn btn-success btn-block'>Sign In</button>
             </form>
+            <hr />
+            <button onClick={handleToAuth} className='btn btn-warning btn-block'>Seller Authorization</button>
          </div>
       </div>
    )

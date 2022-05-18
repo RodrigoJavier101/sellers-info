@@ -10,7 +10,7 @@ const Header = () => {
 
     const logout = async () => {
         setAuth({});
-        navigate('/login');
+        navigate('/');
     }
 
     function handleToggle(e) {

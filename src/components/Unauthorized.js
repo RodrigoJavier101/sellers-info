@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 const Unauthorized = () => {
     const navigate = useNavigate();
 
-    const goBack = () => navigate('/login');
+    const goBack = () => navigate('/');
 
     return (
         <div className="section-unauth-body">

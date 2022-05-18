@@ -13,6 +13,7 @@ import Accounts from './components/admin-zone/Accounts';
 import Events from './components/admin-zone/Events';
 import Unauthorized from './components/Unauthorized';
 import RequireAuth from './components/RequireAuth';
+import Auth from './components/Auth';
 
 
 const ROLES = { 'User': 2001, 'Admin': 5001 }
@@ -22,16 +23,17 @@ const ROLES = { 'User': 2001, 'Admin': 5001 }
 function App() {
 
     return (
-
         <Routes>
             <Route path="/" element={<Layout />}>
                 {/* public routes */}
-                <Route path="login" element={<Login />} />
-
+                <Route path="auth" element={<Auth />} />
+                <Route path="/" element={<Login />} />
+                {/* catch all */}
+                <Route path="*" element={<Missing />} />
                 <Route path="unauthorized" element={<Unauthorized />} />
 
                 <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Admin]} />}>
-                    <Route path="/" element={<Home />} />
+                    <Route path="home" element={<Home />} />
                     <Route path="users" element={<Users />} />
                     <Route path="reports_users" element={<ReportsUser />} />
                     <Route path="products_users" element={<ProductsUser />} />
@@ -44,11 +46,9 @@ function App() {
                     <Route path="events" element={<Events />} />
                     <Route path="settings" element={<Settings />} />
                 </Route>
-                {/* catch all */}
-                <Route path="*" element={<Missing />} />
+
             </Route>
         </Routes>
-
     );
 }
 

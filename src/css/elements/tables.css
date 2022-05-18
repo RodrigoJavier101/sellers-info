@@ -17,6 +17,7 @@ table {
 thead {
     background-color: #486177;
     color: #fff;
+    overflow: scroll;
 }
 
 .table thead th {
