@@ -12,7 +12,7 @@ function Login() {
    const navigate = useNavigate();
    const location = useLocation();
    const from = location.state?.from?.pathname || "/home";
-   const auth = location.state?.from?.pathname || "/auth";
+   const auth_to = location.state?.from?.pathname || "/auth";
 
    const userRef = useRef();
    const errRef = useRef();
@@ -27,7 +27,7 @@ function Login() {
 
    const handleToAuth = (e) => {
       e.preventDefault();
-      navigate(auth, { replace: true });
+      navigate(auth_to, { replace: true });
    }
 
    const handleSubmit = async (e) => {
@@ -42,12 +42,10 @@ function Login() {
          const accessToken = response?.data.refresh_token;
          const roles = [response?.data.user_type];
          const name = response?.data.name;
-
          setAuth({ user, pwd, roles, accessToken, name });
          setUser('');
          setPwd('');
          navigate(from, { replace: true });
-
       } catch (err) {
          if (!err?.response) { setErrMsg('No Server Response'); }
          else if (err.response?.status === 400) { setErrMsg('Missing Username or Password'); }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Background from '../components/Background';
+// import Background from '../components/Background';
 
 const Auth = () => {
     const urlBase = 'https://global-selling.mercadolibre.com';
@@ -8,10 +8,10 @@ const Auth = () => {
     return (
         <>
             <center>
-                <Background />
+                {/* <Background /> */}
                 <a
                     href={`${urlBase}/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`}
-                    className="btn-3d" style={{ o: "width:350px;" }}>Go to "Mercado Libre"</a>
+                    className="btn-3d">Go to "Mercado Libre"</a>
                 <br />
             </center>
 

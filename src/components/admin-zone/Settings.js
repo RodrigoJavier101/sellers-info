@@ -18,10 +18,10 @@ const Settings = () => {
 
         const response = await axios.post(SAVE_URL,
             JSON.stringify({
-                name: e.target.fullname.value,
-                username: e.target.username.value,
-                password: e.target.password.value,
-                user_type: 2001
+                name: e.target.fullname.value.trim(),
+                username: e.target.username.value.toLowerCase().trim(),
+                password: e.target.password.value.trim(),
+                user_type: 334223112
             }),
             { headers: { 'Content-Type': 'application/json' }, }
         );
@@ -60,7 +60,7 @@ const Settings = () => {
                             id='input-fullname'
                             type="text"
                             name="fullname"
-                            placeholder="Seller Name"
+                            placeholder="Seller Name (just as it is)"
                             onChange={(e) => setFullname(e.target.value)}
                             value={fullname}
                             required></input>
@@ -69,7 +69,7 @@ const Settings = () => {
                             id='input-username'
                             type="text"
                             name="username"
-                            placeholder="Username"
+                            placeholder="Username (use lower case)"
                             onChange={(e) => setUsername(e.target.value)}
                             value={username}
                             required></input>
@@ -78,12 +78,12 @@ const Settings = () => {
                             id='input-password'
                             type="text"
                             name="password"
-                            placeholder="Password"
+                            placeholder="Password (it is visible!!)"
                             onChange={(e) => setPassword(e.target.value)}
                             value={password}
                             required></input>
 
-                        <button className="btn btn-success btn-block"> Agregar </button>
+                        <button className="btn btn-success btn-block"> ADD </button>
                     </form>
                     <hr />
 

@@ -1,19 +1,17 @@
-import { useNavigate, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthProvider";
+import SignOutButton from '../SignOutButton'
 import axios from '../../api/axios';
 import $ from 'jquery'
 
 const USERS_LIST_URL = '/api/users/list';
 
 const HeaderAdmin = () => {
-    const navigate = useNavigate();
-    const { setAuth, auth } = useContext(AuthContext);
+
+    const { auth } = useContext(AuthContext);
     const [sellersList, setSellersList] = useState([])
-    const logout = async () => {
-        setAuth({});
-        navigate('/');
-    }
+
 
     const handleSettingsData = async () => {
         try {
@@ -31,8 +29,6 @@ const HeaderAdmin = () => {
         setTimeout(console.log('toggleing'), 200)
     }
 
-
-
     return (
         <header className="">
 
@@ -48,15 +44,16 @@ const HeaderAdmin = () => {
             <nav className="sidebar">
                 <div className="navbar-collapse" id="navbar-collapse">
                     <div className="site-header hidden-xs">
-                        <img className="img-responsive site-logo" alt="Sellers Info" src="/images/mashup-logo.svg"></img>
-                        <h2 className="site-brand">Sellers Info</h2>
+                        <img className="logo_header" alt="Sellers Info" src="../../favicon.ico"></img>
+                        {/* <h2 className="site-brand">Sellers Info</h2> */}
                     </div>
+                    <hr />
                     <div className="col-lg">
                         <div className="col">
-                            <p className="text-black-50 mt-5 mb-5"><b>{auth['name']}</b></p>
+                            <p className="username"><b>{auth['name']}</b></p>
                         </div>
                     </div>
-
+                    <hr />
                     <ul className="">
                         <li>
                             <Link to="/admin">&nbsp;Charts</Link>
@@ -79,9 +76,10 @@ const HeaderAdmin = () => {
                         <li>
                             <Link to="/settings" onClick={handleSettingsData}>&nbsp;Settings</Link>
                         </li>
+                        <hr />
                         <li>
                             <div className="flexGrow">
-                                <button className="btn btn-primary btn-sm" onClick={logout}>Sign Out</button>
+                                <SignOutButton />
                             </div>
                         </li>
                     </ul>

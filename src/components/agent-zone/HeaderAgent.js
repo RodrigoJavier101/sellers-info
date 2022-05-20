@@ -1,11 +1,28 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import {
+    useContext
+    // , useState
+} from "react";
+import { Link } from "react-router-dom"
 import AuthContext from "../../context/AuthProvider";
 import SignOutButton from '../SignOutButton'
+// import axios from '../../api/axios';
 import $ from 'jquery'
 
-const Header = () => {
+// const USERS_LIST_URL = '/api/users/list';
+
+const HeaderAgent = () => {
     const { auth } = useContext(AuthContext);
+    // const [sellersList, setSellersList] = useState([])
+
+
+    // const handleSettingsData = async () => {
+    //     try {
+    //         const response = await axios.get(USERS_LIST_URL,
+    //             { headers: { 'Content-Type': 'application/json' }, }
+    //         );
+    //         setSellersList(response.data);
+    //     } catch (error) { console.log(`ERORR en el axios`, error); }
+    // }
 
     function handleToggle(e) {
         e.preventDefault();
@@ -15,7 +32,6 @@ const Header = () => {
     }
 
     return (
-
         <header className="">
             <div className="navbar navbar-default visible-xs" style={{ l: 'position: fixed; z-index: 1000' }}>
                 <button type="button" className="navbar-toggle collapsed" onClick={(e) => handleToggle(e)}>
@@ -30,7 +46,6 @@ const Header = () => {
                 <div className="navbar-collapse" id="navbar-collapse">
                     <div className="site-header hidden-xs">
                         <img className="logo_header" alt="Sellers Info" src="../../favicon.ico"></img>
-                        {/* <h2 className="site-brand">Sellers Info</h2> */}
                     </div>
                     <hr />
                     <div className="col-lg">
@@ -41,33 +56,18 @@ const Header = () => {
                     <hr />
                     <ul className="">
                         <li>
-                            <Link to="/users">&nbsp;Charts</Link>
-                        </li>
-                        <li>
-                            <Link to="/products_users">&nbsp;Products</Link>
-                        </li>
-                        <li>
-                            <Link to="/reports_users">&nbsp;Reports</Link>
+                            <Link to="/agent">&nbsp;Sellers</Link>
                         </li>
                         <hr />
                         <li>
-                            <SignOutButton />
+                            <div className="flexGrow">
+                                <SignOutButton />
+                            </div>
                         </li>
                     </ul>
 
                     <nav className="nav-footer">
-                        <p className="nav-footer-social-buttons">
-                            <a className="fa-icon" href="https://www.instagram.com/" title="">
-                                <i className="fas fa-user-astronaut"></i>
-                            </a>
-                            <a className="fa-icon" href="https://dribbble.com/" title="">
-                                <i className="fas fa-wpexplorer"></i>
-                            </a>
-                            <a className="fa-icon" href="https://twitter.com/" title="">
-                                <i className="fas fa-save"></i>
-                            </a>
-                        </p>
-                        <a href="http://www.blcorporations.com/" title="website_" target="_blank" rel="noreferrer">
+                        <a href="https://www.blcorporations.com/" title="website_" target="_blank" rel="noreferrer">
                             <p>© BL Corporations</p>
                         </a>
                     </nav>
@@ -80,4 +80,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default HeaderAgent

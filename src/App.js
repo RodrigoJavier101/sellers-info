@@ -14,31 +14,44 @@ import Events from './components/admin-zone/Events';
 import Unauthorized from './components/Unauthorized';
 import RequireAuth from './components/RequireAuth';
 import Auth from './components/Auth';
+import Agent from './components/agent-zone/Agent';
 
 
-const ROLES = { 'User': 2001, 'Admin': 5001 }
+const ROLES = { 'User': 334223112, 'Admin': 558861093, 'Agent': 221092534 }
 // const ROLES = { 'User': process.env.ROLE_USER, 'Admin': process.env.ROLE_ADMIN }
-
 
 function App() {
 
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
+
                 {/* public routes */}
                 <Route path="auth" element={<Auth />} />
                 <Route path="/" element={<Login />} />
-                {/* catch all */}
-                <Route path="*" element={<Missing />} />
                 <Route path="unauthorized" element={<Unauthorized />} />
 
-                <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Admin]} />}>
+                {/* catch all */}
+                <Route path="*" element={<Missing />} />
+
+                {/* Users Routes */}
+                <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Agent, ROLES.Admin]} />}>
                     <Route path="home" element={<Home />} />
+                </Route>
+
+                {/* Users Routes */}
+                <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
                     <Route path="users" element={<Users />} />
                     <Route path="reports_users" element={<ReportsUser />} />
                     <Route path="products_users" element={<ProductsUser />} />
                 </Route>
 
+                {/* Agent Routes */}
+                <Route element={<RequireAuth allowedRoles={[ROLES.Agent]} />}>
+                    <Route path="agent" element={<Agent />} />
+                </Route>
+
+                {/* Admin Routes */}
                 <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
                     <Route path="admin" element={<Admin />} />
                     <Route path="sellers" element={<SellersList />} />

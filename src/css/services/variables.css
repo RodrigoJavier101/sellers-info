@@ -19,5 +19,8 @@
     --bg-pic-events-url: url('../../images/img-01.jpg');
     --bg-pic-templatesmo-url: url('../../images/img-01.jpg');
     /* fonts */
-    --font-1:url('../../fonts/GowunBatang-Bold.ttf');
+    --font-1: url('../../fonts/GowunBatang-Bold.ttf');
+    --font-2: url('../../fonts/Mukta-Light.ttf');
+    /* sizes */
+    --z-index-loader: 1000;
 }

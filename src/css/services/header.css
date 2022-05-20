@@ -102,4 +102,28 @@ a.navbar-brand {
 	background: #f43866;
 }
 
+.logo_header {
+	/* color: #fff; */
+	/* font-size: 1em; */
+	/* font-size: 10px; */
+	/* width: 3em; */
+	height: 3.5rem;
+	/* text-shadow: 0 0 50px #0f0, 0 0 100px #0f0, 0 0 150px #0f0, 0 0 200px #0f0, 0 0 250px #0f0; */
+	animation: animate_ 1s linear infinite;
+}
 
+@keyframes animate_ {
+	0% {
+		filter: hue-rotate(0deg);
+	}
+
+	100% {
+		filter: hue-rotate(360deg);
+	}
+}
+
+.username {
+	font-family: var(--font-2);
+	font-size: 0.9rem;
+	color: var(--bg-header-admin);
+}
