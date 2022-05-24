@@ -4,7 +4,7 @@ import {
 } from "react";
 import { Link } from "react-router-dom"
 import AuthContext from "../../context/AuthProvider";
-import SignOutButton from '../SignOutButton'
+import SignOutButton from '../buttons/SignOutButton';
 // import axios from '../../api/axios';
 import $ from 'jquery'
 
@@ -33,6 +33,7 @@ const HeaderAgent = () => {
 
     return (
         <header className="">
+            
             <div className="navbar navbar-default visible-xs" style={{ l: 'position: fixed; z-index: 1000' }}>
                 <button type="button" className="navbar-toggle collapsed" onClick={(e) => handleToggle(e)}>
                     <span className="sr-only">Toggle</span>
@@ -42,7 +43,7 @@ const HeaderAgent = () => {
                 </button>
             </div>
 
-            <nav className="sidebar">
+            <nav className="sidebar bg-agent">
                 <div className="navbar-collapse" id="navbar-collapse">
                     <div className="site-header hidden-xs">
                         <img className="logo_header" alt="Sellers Info" src="../../favicon.ico"></img>

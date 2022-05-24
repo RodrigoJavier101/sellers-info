@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom"
-import AuthContext from "../context/AuthProvider"
+import AuthContext from "../../context/AuthProvider"
+
 
 const SignOutButton = () => {
 
@@ -11,7 +12,6 @@ const SignOutButton = () => {
         setAuth({});
         navigate('/');
     }
-
 
     return (
         <>

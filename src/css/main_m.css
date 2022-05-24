@@ -2,7 +2,6 @@
 @import url('./services/normalize.css');
 @import url('./services/variables.css');
 @import url('./services/fonts.css');
-@import url('./services/colors.css');
 @import url('./services/tags.css');
 @import url('./services/background.css');
 @import url('./services/auth/auth.css');
@@ -13,13 +12,17 @@
 /* SERVICES */
 @import url('./services/header.css');
 @import url('./services/navbar.css');
-@import url('./services/sidebar.css');
 
+/* sidebar "header" */
+@import url('./services/sidebar/sidebar.css');
+
+/* settings */
 @import url('./services/settings/settings.css');
 @import url('./services/settings/sellers-table-settings.css');
 
 @import url('./services/sellers-list/sellers-list.css');
 
+/* home */
 @import url('./services/home/home.css');
 @import url('./services/unauthorized/unauthorized.css');
 @import url('./services/missing/missing.css');

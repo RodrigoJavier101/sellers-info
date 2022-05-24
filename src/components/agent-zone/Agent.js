@@ -10,21 +10,22 @@ import Background from '../Background'
 const Agent = () => {
 
     const [grantedList, setGrantedList] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const USERS_GRANTED_LIST = '/api/users/allGrantedUsers'
 
     const handleGrantedUsers = async () => {
         try {
 
             const response = await axios.get(USERS_GRANTED_LIST, { headers: { 'Content-Type': 'application/json' } });
-            setGrantedList(response?.['data']);
+            setGrantedList(response?.['data'].filter((el) => el['status_'] === 'active'));
+            setIsLoading(false);
 
         } catch (error) { console.log('ERROR GRANTEWd YUSES sELERS', error); }
-
     }
 
     useEffect(() => handleGrantedUsers(), [])
 
-    if (grantedList.length < 1) {
+    if (isLoading) {
         return (
             <>
                 <HeaderAgent />
@@ -40,13 +41,16 @@ const Agent = () => {
                 <Background />
                 <div className="sellers-list-box">
 
-                    {grantedList.length > 1
+                    {grantedList.length > 0
                         ?
                         <>
-                            <h4 className='title_settings'> Total Sellers Granted ({grantedList.length}),  Inactives ({grantedList.filter((el) => el['status_'] === 'inactive').length})</h4>
+                            <h4 className='title_settings'> Total Granted Sellers ({grantedList.length})
+                                {/* ,  Inactives ({grantedList.filter((el) => el['status_'] === 'inactive').length}) */}
+                            </h4>
                             <table className="table table-hover table-bordered">
                                 <thead>
                                     <tr>
+
                                         <th> # </th>
                                         <th> ID </th>
                                         <th> NickName </th>
@@ -56,13 +60,14 @@ const Agent = () => {
                                 </thead>
                                 <tbody>
                                     {grantedList.map((el, index) => {
+                                        const i = index + 1;
                                         let classic = '';
                                         let textClass = '';
                                         if (el['status_'] === 'active') { classic = 'moving'; textClass = 'active-danger'; }
                                         if (el['status_'] === 'inactive') { classic = 'cancelled'; textClass = 'inactive-danger'; }
                                         return (
                                             <tr className='warning' key={`${index}`}>
-                                                <td> {index} </td>
+                                                <td> {i} </td>
                                                 <td> <b>{el['id']}</b> </td>
                                                 <td> <b>{el['nickname']}</b> </td>
                                                 <td>

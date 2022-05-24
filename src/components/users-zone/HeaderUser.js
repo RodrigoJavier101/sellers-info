@@ -1,22 +1,22 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/AuthProvider";
-import SignOutButton from '../SignOutButton'
+import SignOutButton from '../buttons/SignOutButton';
 import $ from 'jquery'
 
-const Header = () => {
+const HeaderUser = () => {
     const { auth } = useContext(AuthContext);
 
     function handleToggle(e) {
         e.preventDefault();
-        $('#main-collapse').toggleClass("open")
+        $('#main-collapse').toggleClass("open");
         $('.sidebar').toggleClass("open");
-        setTimeout(console.log('toggleing'), 200)
+        setTimeout(console.log('toggleing'), 200);
     }
 
     return (
-
         <header className="">
+          
             <div className="navbar navbar-default visible-xs" style={{ l: 'position: fixed; z-index: 1000' }}>
                 <button type="button" className="navbar-toggle collapsed" onClick={(e) => handleToggle(e)}>
                     <span className="sr-only">Toggle</span>
@@ -26,7 +26,7 @@ const Header = () => {
                 </button>
             </div>
 
-            <nav className="sidebar">
+            <nav className="sidebar bg-users">
                 <div className="navbar-collapse" id="navbar-collapse">
                     <div className="site-header hidden-xs">
                         <img className="logo_header" alt="Sellers Info" src="../../favicon.ico"></img>
@@ -80,4 +80,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default HeaderUser

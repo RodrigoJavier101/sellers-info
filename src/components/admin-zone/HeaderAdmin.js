@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthProvider";
-import SignOutButton from '../SignOutButton'
+import SignOutButton from '../buttons/SignOutButton'
 import axios from '../../api/axios';
 import $ from 'jquery'
 
@@ -24,7 +24,7 @@ const HeaderAdmin = () => {
 
     function handleToggle(e) {
         e.preventDefault();
-        $('#main-collapse').toggleClass("open")
+        $('#main-collapse').toggleClass("open");
         $('.sidebar').toggleClass("open");
         setTimeout(console.log('toggleing'), 200)
     }
@@ -41,7 +41,7 @@ const HeaderAdmin = () => {
                 </button>
             </div>
 
-            <nav className="sidebar">
+            <nav className="sidebar bg-admin">
                 <div className="navbar-collapse" id="navbar-collapse">
                     <div className="site-header hidden-xs">
                         <img className="logo_header" alt="Sellers Info" src="../../favicon.ico"></img>

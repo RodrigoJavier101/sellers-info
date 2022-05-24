@@ -2,8 +2,9 @@
     /* main colors */
     --html-color: #fff;
     --bg-main: dodgerblue;
-    --bg-header-user: #367fad;
-    --bg-header-admin: #04456d;
+    --bg-header-user: #75b4dc;
+    --bg-header-admin: #fef073;
+    --bg-header-agent: #bc9229;
     --bg-login-form: #04456d;
     --bg-settings-form: #04456d;
     --bg-home-section: #04456d;

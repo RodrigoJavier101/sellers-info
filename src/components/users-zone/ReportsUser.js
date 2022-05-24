@@ -15,13 +15,12 @@ const ReportsUser = () => {
     return (
         <>
             <div id="main-collapse">
-                {/* <Loader /> */}
                 <HeaderUser />
                 <div className="" id="home">
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <p className="text-white mt-5 mb-5">REPORTS</p>
+                                <p className="text-black mt-5 mb-5">REPORTS</p>
                             </div>
                         </div>
                     </div>

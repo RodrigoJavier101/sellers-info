@@ -1,11 +1,12 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthProvider";
 
 
 const ButtonLogout = () => {
-    const { setAuth } = useContext(AuthContext);
+
     const navigate = useNavigate();
+    const { setAuth } = useContext(AuthContext);
 
     const logout = async () => {
         setAuth({});
