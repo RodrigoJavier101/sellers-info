@@ -14,7 +14,7 @@ const NavToggleButton = () => {
         <>
             <div className="navbar navbar-default visible-xs">
                 <button type="button" className="navbar-toggle collapsed" onClick={(e) => handleToggle(e)}>
-                    <span className="sr-only"></span>
+                    {/* <span className="sr-only"></span> */}
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>
                     <span className="icon-bar"></span>

@@ -283,13 +283,13 @@
 
 .navbar-toggle .icon-bar {
     display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 1px
+    width: 30px;
+    height: 4px;
+    border-radius: 1px;
 }
 
 .navbar-toggle .icon-bar+.icon-bar {
-    margin-top: 4px
+    margin-top: 6px
 }
 
 
@@ -469,7 +469,7 @@
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
-    background-color: #fff
+    background-color: transparent;
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
