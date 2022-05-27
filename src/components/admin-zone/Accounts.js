@@ -1,12 +1,13 @@
 import React from 'react'
 import HeaderAdmin from './HeaderAdmin'
+import Background from '../Background'
 
 const Accounts = () => {
     return (
         <>
             <HeaderAdmin />
+            <Background />
             <div id="main-collapse">
-                {/* <Loader /> */}
                 <div className="" id="home">
                     <div className="container">
                         <div id="main-collapse">
@@ -65,6 +66,7 @@ const Accounts = () => {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                   
                                                     <div className="col-sm-6 col-md-4">
                                                         <div className="service_blog">
                                                             <div className="service_icons">
@@ -112,6 +114,7 @@ const Accounts = () => {
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>

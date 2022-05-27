@@ -2,17 +2,19 @@ import { useRef, useState, useEffect } from 'react';
 import useAuth from '../hooks/useAuth';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from '../api/axios';
+import Background from '../components/Background'
 
 const LOGIN_URL = '/api/users';
 
 function Login() {
-
    const { setAuth } = useAuth();
-
    const navigate = useNavigate();
    const location = useLocation();
-   const from = location.state?.from?.pathname || "/home";
-   const auth_to = location.state?.from?.pathname || "/auth";
+   const admin = location.state?.from?.pathname || "/admin";
+   const agent = location.state?.from?.pathname || "/agent";
+   const user__ = location.state?.from?.pathname || "/users";
+   // const from = location.state?.from?.pathname || "/home";
+   // const auth_to = location.state?.from?.pathname || "/auth";
 
    const userRef = useRef();
    const errRef = useRef();
@@ -25,10 +27,10 @@ function Login() {
 
    useEffect(() => { setErrMsg(''); }, [user, pwd])
 
-   const handleToAuth = (e) => {
-      e.preventDefault();
-      navigate(auth_to, { replace: true });
-   }
+   // const handleToAuth = (e) => {
+   //    e.preventDefault();
+   //    navigate(auth_to, { replace: true });
+   // }
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -45,7 +47,12 @@ function Login() {
          setAuth({ user, pwd, roles, accessToken, name });
          setUser('');
          setPwd('');
-         navigate(from, { replace: true });
+
+         if (roles[0] === 221092534) { navigate(agent, { replace: true }); }
+         if (roles[0] === 334223112) { navigate(user__, { replace: true }); }
+         if (roles[0] === 558861093) { navigate(admin, { replace: true }); }
+
+         // navigate(from, { replace: true });
       } catch (err) {
          if (!err?.response) { setErrMsg('No Server Response'); }
          else if (err.response?.status === 400) { setErrMsg('Missing Username or Password'); }
@@ -57,8 +64,9 @@ function Login() {
 
 
    return (
-      <div className='body_login'>
-         <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+      <>
+         <Background />
+         {/* <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p> */}
          <div className="loginbox">
             <div>
                <img src="../favicon.ico" alt="BL" className="avatar logo_login"></img>
@@ -90,9 +98,9 @@ function Login() {
                <button className='btn btn-success btn-block'>Sign In</button>
             </form>
             <hr />
-            <button onClick={handleToAuth} className='btn btn-warning btn-block'>Seller Authorization</button>
+            {/* <button onClick={handleToAuth} className='btn btn-warning btn-block'>Seller Authorization</button> */}
          </div>
-      </div>
+      </>
    )
 }
 

@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import ButtonLogout from '../buttons/ButtonLogout'
+import Background from '../../components/Background'
 
 const SectionHome = ({ name, page, title }) => {
     return (
-        <div className="section-home-body">
+        <>
+        <Background/>
+        <div className="">
             <section className="section-home">
-                {/* <h1 className="title_home">Home</h1> */}
                 <h2 className="sub_title_home">Welcome {name}!</h2>
                 <br />
                 <hr />
@@ -15,6 +17,7 @@ const SectionHome = ({ name, page, title }) => {
                 <ButtonLogout />
             </section>
         </div>
+        </>
     )
 }
 

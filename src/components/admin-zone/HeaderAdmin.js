@@ -3,7 +3,8 @@ import { useContext, useState } from "react";
 import AuthContext from "../../context/AuthProvider";
 import SignOutButton from '../buttons/SignOutButton'
 import axios from '../../api/axios';
-import $ from 'jquery'
+import NavToggleButton from '../navbar-toggle-button/NavToggleButton'
+
 
 const USERS_LIST_URL = '/api/users/list';
 
@@ -22,28 +23,12 @@ const HeaderAdmin = () => {
         } catch (error) { console.log(`ERORR en el axios`, error); }
     }
 
-    function handleToggle(e) {
-        e.preventDefault();
-        $('#main-collapse').toggleClass("open");
-        $('.sidebar').toggleClass("open");
-        setTimeout(console.log('toggleing'), 200)
-    }
-
     return (
         <header className="">
-
-            <div className="navbar navbar-default visible-xs" style={{ l: 'position: fixed; z-index: 1000' }}>
-                <button type="button" className="navbar-toggle collapsed" onClick={(e) => handleToggle(e)}>
-                    <span className="sr-only">Toggle</span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                    <span className="icon-bar"></span>
-                </button>
-            </div>
-
+            <NavToggleButton />
             <nav className="sidebar bg-admin">
                 <div className="navbar-collapse" id="navbar-collapse">
-                    <div className="site-header hidden-xs">
+                    <div className="site-header">
                         <img className="logo_header" alt="Sellers Info" src="../../favicon.ico"></img>
                         {/* <h2 className="site-brand">Sellers Info</h2> */}
                     </div>
@@ -83,17 +68,8 @@ const HeaderAdmin = () => {
                             </div>
                         </li>
                     </ul>
-
-                    <nav className="nav-footer">
-                        <a href="http://www.blcorporations.com/" title="website_" target="_blank" rel="noreferrer">
-                            <p>© BL Corporations</p>
-                        </a>
-                    </nav>
-
                 </div>
-
             </nav>
-
         </header>
     )
 }

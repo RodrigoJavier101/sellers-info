@@ -1,0 +1,29 @@
+:root {
+    /* main colors */
+    --html-color: #fff;
+    --navbar-togglebtn-color: dodgerblue;
+    --bg-main: dodgerblue;
+    --bg-header-user: #75b4dc;
+    --bg-header-admin: #fef073;
+    --bg-header-admin-username: dodgerblue;
+    --bg-header-agent: #bc9229;
+    --bg-login-form: #04456d;
+    --bg-settings-form: #04456d;
+    --bg-home-section: #04456d;
+    --bg-missing-article: #6f4d0e;
+    --bg-unauth-section: #cabca2;
+    --table-border-color: #415a70;
+    --table-text: #221c12;
+    --table-text-hover: #306faa;
+    /* images */
+    --bg-pic-airplane-url: url('../../../../public/images/airplane.jpeg');
+    --bg-pic-icon-url: url('../../../../public/images/apple-icon-180x180.png');
+    --bg-pic-missing-url: url('../../../../public/images/slider-01.jpg');
+    --bg-pic-events-url: url('../../../../public/images/img-01.jpg');
+    --bg-pic-templatesmo-url: url('../../../../public/images/img-01.jpg');
+    /* fonts */
+    --font-1: url('../../../../public/fonts/GowunBatang-Bold.ttf');
+    --font-2: url('../../../../public/fonts/Mukta-Light.ttf');
+    /* sizes */
+    --z-index-loader: 1000;
+}

@@ -2,7 +2,6 @@ import React from 'react'
 
 const Loader = () => {
     return (
-
         <div className='body-loader'>
             <ul className="ul-loader">
                 <li className="li-loader" data-title="l">l</li>
@@ -18,13 +17,3 @@ const Loader = () => {
 }
 
 export default Loader
-
-
-
-/* 
-  <div id="preloader">
-            <div className="loader">
-                <img src="images/loader.gif" alt="#" />
-            </div>
-   </div>
-*/

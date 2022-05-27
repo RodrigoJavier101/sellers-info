@@ -1,0 +1,12 @@
+.bg-general {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    /* margin: 0;
+    padding: 0; */
+    background: var(--bg-pic-airplane-url);
+    /* background-attachment: fixed; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
