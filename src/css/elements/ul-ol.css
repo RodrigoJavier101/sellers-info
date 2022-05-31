@@ -1,0 +1,9 @@
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 12px
+}
+
+ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 0
+}
+
