@@ -1,8 +1,8 @@
 import React, { useState, } from 'react'
 import HeaderAgent from '../agent-zone/HeaderAgent'
-import Loader from '../Loader'
 import axios from '../../api/axios';
 import Background from '../Background'
+import Loader from '../Loader'
 
 const Agent = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -25,7 +25,6 @@ const Agent = () => {
             <HeaderAgent />
             <Background />      
             {isLoading
-            
                 ?
                 <Loader />
                 :
