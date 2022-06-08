@@ -24,55 +24,53 @@ const SellersList = () => {
         <>
             <HeaderAdmin />
             <Background />
-            <div className="sellers-list-box">
-                {isLoader ?
-                    <Loader />
-                    :
-                    <>
-                        <div className="sellers-list-box">
-                            <h4 className='title_settings'>
-                                Total Granted Sellers ({grantedList.length})
-                                ,  Inactives ({grantedList.filter((el) => el['refresh_token'].length === 0).length})
-                            </h4>
-                            <table className="table table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th> # </th>
-                                        <th> ID </th>
-                                        <th> NickName </th>
-                                        <th> Status </th>
-                                        <th> Registration Date </th>
-                                        <th> Refresh Token </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {grantedList.map((el, index) => {
-                                        const i = index + 1;
-                                        let classic = '';
-                                        let textClass = '';
-                                        let textActive = '';
-                                        if (el['refresh_token'].length > 0) { classic = 'moving'; textClass = 'active-danger'; textActive = 'ACTIVE'; }
-                                        else { classic = 'cancelled'; textClass = 'inactive-danger'; textActive = 'INACTIVE'; }
-                                        return (
-                                            <tr className='warning' key={`${index}`}>
-                                                <td> {i} </td>
-                                                <td> <b>{el['id']}</b> </td>
-                                                <td> <b>{el['nickname']}</b> </td>
-                                                <td>
-                                                    <div className={`tm-status-circle ${classic}`}></div>
-                                                    <em><b className={textClass}>{textActive}</b></em>
-                                                </td>
-                                                <td> <b>{el['registration_date'].split('T')[0]}</b> </td>
-                                                <td> <b>{el['refresh_token']}</b> </td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
-                            </table>
-                        </div>
-                    </>
-                }
-            </div>
+            {isLoader ?
+                <Loader />
+                :
+                <>
+                    <div className="sellers-list-box">
+                        <h4 className='title_settings'>
+                            Total Granted Sellers ({grantedList.length})
+                            ,  Inactives ({grantedList.filter((el) => el['refresh_token'].length === 0).length})
+                        </h4>
+                        <table className="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th> # </th>
+                                    <th> ID </th>
+                                    <th> NickName </th>
+                                    <th> Status </th>
+                                    <th> Registration Date </th>
+                                    <th> Refresh Token </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {grantedList.map((el, index) => {
+                                    const i = index + 1;
+                                    let classic = '';
+                                    let textClass = '';
+                                    let textActive = '';
+                                    if (el['refresh_token'].length > 0) { classic = 'moving'; textClass = 'active-danger'; textActive = 'ACTIVE'; }
+                                    else { classic = 'cancelled'; textClass = 'inactive-danger'; textActive = 'INACTIVE'; }
+                                    return (
+                                        <tr className='warning' key={`${index}`}>
+                                            <td> {i} </td>
+                                            <td> <b>{el['id']}</b> </td>
+                                            <td> <b>{el['nickname']}</b> </td>
+                                            <td>
+                                                <div className={`tm-status-circle ${classic}`}></div>
+                                                <em><b className={textClass}>{textActive}</b></em>
+                                            </td>
+                                            <td> <b>{el['registration_date'].split('T')[0]}</b> </td>
+                                            <td> <b>{el['refresh_token']}</b> </td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                </>
+            }
         </>
     )
 }
