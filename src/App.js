@@ -1,3 +1,4 @@
+import React from 'react'
 import Layout from './components/Layout';
 import Home from './components/Home';
 import Login from './components/Login';
@@ -25,32 +26,26 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
-
                 {/* public routes */}
                 <Route path="auth" element={<Auth />} />
                 <Route path="/" element={<Login />} />
                 <Route path="unauthorized" element={<Unauthorized />} />
-
                 {/* catch all */}
                 <Route path="*" element={<Missing />} />
-
                 {/* Users Routes */}
                 <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Agent, ROLES.Admin]} />}>
                     <Route path="home" element={<Home />} />
                 </Route>
-
                 {/* Users Routes */}
                 <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
                     <Route path="users" element={<Users />} />
                     <Route path="reports_users" element={<ReportsUser />} />
                     <Route path="products_users" element={<ProductsUser />} />
                 </Route>
-
                 {/* Agent Routes */}
                 <Route element={<RequireAuth allowedRoles={[ROLES.Agent]} />}>
                     <Route path="agent" element={<Agent />} />
                 </Route>
-
                 {/* Admin Routes */}
                 <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
                     <Route path="admin" element={<Admin />} />

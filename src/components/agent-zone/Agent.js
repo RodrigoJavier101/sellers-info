@@ -1,6 +1,4 @@
-import React, {
-    useState,
-} from 'react'
+import React, { useState, } from 'react'
 import HeaderAgent from '../agent-zone/HeaderAgent'
 import Loader from '../Loader'
 import axios from '../../api/axios';
@@ -8,6 +6,10 @@ import Background from '../Background'
 
 const Agent = () => {
     const [isLoading, setIsLoading] = useState(true)
+    const [grantedList, setGrantedList] = useState([]);
+
+    const USERS_GRANTED_LIST = '/api/users/allGrantedUsers'
+
     const handleGrantedUsers = async () => {
         try {
             const response = await axios.get(USERS_GRANTED_LIST, { headers: { 'Content-Type': 'application/json' } });
@@ -16,17 +18,16 @@ const Agent = () => {
         } catch (error) { console.log('ERROR GRANTEWd YUSES sELERS', error); }
     }
 
-    const [grantedList, setGrantedList] = useState([]);
-    const USERS_GRANTED_LIST = '/api/users/allGrantedUsers'
-
     if (isLoading) handleGrantedUsers();
 
     return (
         <>
             <HeaderAgent />
             <Background />
-            {!isLoading
+            {isLoading
                 ?
+                <Loader />
+                :
                 <>
                     <div className="sellers-list-box">
                         <h4 className='title_settings'>
@@ -68,10 +69,6 @@ const Agent = () => {
                         </table>
                     </div>
                 </>
-                :
-                <Loader />
-
-
             }
 
         </>

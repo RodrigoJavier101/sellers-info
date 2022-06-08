@@ -2,7 +2,12 @@
 @import url('./services/common/normalize.css');
 @import url('./services/common/variables.css');
 @import url('./services/common/fonts.css');
+
 @import url('./elements/tags.css');
+@import url('./elements/a.css');
+@import url('./elements/h.css');
+
+
 @import url('./services/common/background.css');
 @import url('./services/common/buttons/btn1.css');
 @import url('./services/common/buttons/btn.css');
