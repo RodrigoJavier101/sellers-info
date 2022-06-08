@@ -21,7 +21,7 @@ const Agent = () => {
     if (isLoading) handleGrantedUsers();
 
     return (
-        <>
+        <> 
             <HeaderAgent />
             <Background />
             {isLoading
