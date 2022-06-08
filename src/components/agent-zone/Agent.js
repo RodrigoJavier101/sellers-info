@@ -23,8 +23,9 @@ const Agent = () => {
     return (
         <> 
             <HeaderAgent />
-            <Background />
+            <Background />      
             {isLoading
+            
                 ?
                 <Loader />
                 :
