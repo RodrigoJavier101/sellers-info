@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import HeaderAdmin from './HeaderAdmin'
 // import Loader from '../Loader'
 import axios from '../../api/axios';
+import Background from '../Background'
 
 const SAVE_URL = '/api/users/save';
 const LIST_URL = '/api/users/list';
@@ -12,48 +13,56 @@ const Settings = () => {
     const [password, setPassword] = useState('');
     const [sellers, setSellers] = useState([]);
     const [msg, setMsg] = useState('');
+    const [isLoader, setIsLoader] = useState(true);
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        try {
+            e.preventDefault();
+            const response = await axios.post(SAVE_URL,
+                JSON.stringify({
+                    name: e.target.fullname.value.trim(),
+                    username: e.target.username.value.toLowerCase().trim(),
+                    password: e.target.password.value.trim(),
+                    user_type: 334223112
+                }),
+                { headers: { 'Content-Type': 'application/json' }, }
+            );
+            console.log(response?.data);
+            setMsg(response?.data)
+            setFullname('');
+            document.getElementById('input-fullname').value = '';
+            setUsername('');
+            document.getElementById('input-username').value = '';
+            setPassword('');
+            document.getElementById('input-password').value = '';
 
-        const response = await axios.post(SAVE_URL,
-            JSON.stringify({
-                name: e.target.fullname.value.trim(),
-                username: e.target.username.value.toLowerCase().trim(),
-                password: e.target.password.value.trim(),
-                user_type: 334223112
-            }),
-            { headers: { 'Content-Type': 'application/json' }, }
-        );
-        console.log(response?.data);
-        setMsg(response?.data)
-        setFullname('');
-        document.getElementById('input-fullname').value = '';
-        setUsername('');
-        document.getElementById('input-username').value = '';
-        setPassword('');
-        document.getElementById('input-password').value = '';
+            const response_ = await axios.get(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
+            setSellers(response_['data']);
 
-        const response_ = await axios.get(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
-        setSellers(response_['data']);
-
+        } catch (error) { console.log(error); }
     }
 
-
     const listSellers = async (e) => {
-        e.preventDefault();
-        const response = await axios.get(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
-        setSellers(response['data']);
-    };
+        try {
+            if (e) e.preventDefault();
+            const response = await axios.get(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
+            setSellers(response['data']);
 
+            setIsLoader(false);
+        } catch (error) { console.log(error); }
+    }
+
+    if (isLoader) listSellers();
 
     return (
         <>
             <HeaderAdmin />
-            <div className='settings-body' onMouseMove={listSellers}>
-                <p className={msg ? "errmsg" : "offscreen"} aria-live="assertive">{msg}</p>
+            <Background />
+            <div className=''>
+                {/* <p className={msg ? "errmsg" : "offscreen"} aria-live="assertive">{msg}</p> */}
                 <div className="settingsbox">
                     <h1 className='title_settings'>Add a seller here</h1>
+                    <hr />
                     <form onSubmit={handleSubmit}>
 
                         <input

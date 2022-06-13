@@ -5,6 +5,8 @@
 
 .env
 
+
+*.sql
 /.pnp
 .pnp.js
 

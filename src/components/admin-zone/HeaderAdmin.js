@@ -1,27 +1,14 @@
 import { Link } from "react-router-dom"
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import AuthContext from "../../context/AuthProvider";
 import SignOutButton from '../buttons/SignOutButton'
-import axios from '../../api/axios';
 import NavToggleButton from '../navbar-toggle-button/NavToggleButton'
 
 
-const USERS_LIST_URL = '/api/users/list';
 
 const HeaderAdmin = () => {
 
     const { auth } = useContext(AuthContext);
-    const [sellersList, setSellersList] = useState([])
-
-
-    const handleSettingsData = async () => {
-        try {
-            const response = await axios.get(USERS_LIST_URL,
-                { headers: { 'Content-Type': 'application/json' }, }
-            );
-            setSellersList(response.data);
-        } catch (error) { console.log(`ERORR en el axios`, error); }
-    }
 
     return (
         <header className="">
@@ -30,7 +17,6 @@ const HeaderAdmin = () => {
                 <div className="navbar-collapse" id="navbar-collapse">
                     <div className="site-header">
                         <img className="logo_header" alt="Sellers Info" src="../../favicon.ico"></img>
-                        {/* <h2 className="site-brand">Sellers Info</h2> */}
                     </div>
                     <hr />
                     <div className="col-lg">
@@ -59,7 +45,7 @@ const HeaderAdmin = () => {
                             <Link to="/events">&nbsp;Events</Link>
                         </li>
                         <li>
-                            <Link to="/settings" onClick={handleSettingsData}>&nbsp;Settings</Link>
+                            <Link to="/settings">&nbsp;Settings</Link>
                         </li>
                         <hr />
                         <li>

@@ -1,16 +1,3 @@
-.settings-body {
-   position: fixed;
-   width: 130vw;
-   height: 100%;
-   margin: 0;
-   padding: 0;
-   background: url('../../../../public/images/airplane.jpeg');
-   background-attachment: fixed;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-}
-
 .settingsbox {
    width: 420px;
    height: 420px;
