@@ -45,7 +45,7 @@ const Settings = () => {
     const listSellers = async (e) => {
         try {
             if (e) e.preventDefault();
-            const response = await axios.get(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
+            const response = await axios.post(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
             setSellers(response['data']);
 
             setIsLoader(false);
