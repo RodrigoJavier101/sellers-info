@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import Background from '../components/Background'
+import LoaderButtons from '../components/LoaderButtons'
 
 const Unauthorized = () => {
     const navigate = useNavigate();
-
+    const [isButtonPress2, setIsButtonPress2] = useState(false);
     const goBack = () => navigate('/');
     // const goAuth = () => navigate('/auth');
 
@@ -21,8 +23,12 @@ const Unauthorized = () => {
                 <p className="sub_title_unauth">You do not have access, so you can give your authorization or retry login.</p>
 
                 <div className="flexGrow">
-                    {/* <button onClick={goAuth} className='btn btn-warning btn-block'>Seller Authorization</button> */}
-                    <a href={`${urlFinal}`} className='btn btn-warning btn-block'>Seller Authorization</a>
+                    {isButtonPress2 ? <LoaderButtons /> : <></>}
+                    <a onClick={() => {
+                        setIsButtonPress2(true);
+                        setTimeout(() => setIsButtonPress2(false), 6000);
+                    }}
+                        href={`${urlFinal}`} className='btn btn-warning btn-block'>Seller Authorization</a>
                 </div>
                 <hr />
                 <div className="flexGrow">

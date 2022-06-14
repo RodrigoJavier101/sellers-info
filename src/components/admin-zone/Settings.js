@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import HeaderAdmin from './HeaderAdmin'
+import LoaderButtons from '../LoaderButtons'
 // import Loader from '../Loader'
 import axios from '../../api/axios';
 import Background from '../Background'
@@ -12,6 +13,7 @@ const Settings = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [sellers, setSellers] = useState([]);
+    const [isButtonPress2, setIsButtonPress2] = useState(true);
     // const [msg, setMsg] = useState('');
     const [isLoader, setIsLoader] = useState(true);
 
@@ -97,59 +99,60 @@ const Settings = () => {
                     <hr />
                 </div>
                 <div className="settings-table-box">
-                    {/* <h2 className="tm-block-title">Sellers List</h2> */}
-                    {sellers.length > 0 ?
-                        <table className="table settings-table-inner table-hover">
-
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">STATUS</th>
-                                    <th scope="col">SELLER NAME</th>
-                                    <th scope="col">USER</th>
-                                    <th scope="col">PASSWORD</th>
-                                    <th scope="col">USER_ID</th>
-                                    <th scope="col">AUTH DATE</th>
-                                    <th scope="col">DELETE</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {sellers.map((el, index) => {
-                                    let text = '', classic = '';
-                                    const in_ = index + 1;
-                                    if (el['id'] % 2 === 0) {
-                                        classic = 'cancelled';
-                                        text = 'Stopped';
-                                    }
-                                    if (el['id'] % 2 !== 0) {
-                                        classic = 'moving';
-                                        text = 'Active';
-                                    }
-                                    return (
-                                        /* moving  cancelled   pending*/
-                                        < tr className='warning' key={el['id']}>
-                                            <th key={`${el['id']}row`} scope="row"><b>{in_}</b></th>
-                                            <td key={`${el['id']}status`}>
-                                                <div className={`tm-status-circle ${classic}`}></div>
-                                                <code><em><b>{text}</b></em></code>
-                                            </td>
-                                            <td key={`${el['id']}name`}><b>{el['name']}</b></td>
-                                            <td key={`${el['id']}username`}><b>{el['username']}</b></td>
-                                            <td key={`${el['id']}password`}><b>{el['password']}</b></td>
-                                            <td key={`${el['id']}`}><b>{el['refresh_token']}</b></td>
-                                            <td key={`${el['id']}date`}>12:00, 22 NOV 2018</td>
-                                            <td key={`${el['id']}btn`}><button>admin seller</button></td>
+                    {isLoader ? <LoaderButtons /> :
+                        <>
+                            {sellers.length > 0 ?
+                                <table className="table settings-table-inner table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">STATUS</th>
+                                            <th scope="col">SELLER NAME</th>
+                                            <th scope="col">USER</th>
+                                            <th scope="col">PASSWORD</th>
+                                            <th scope="col">USER_ID</th>
+                                            <th scope="col">AUTH DATE</th>
+                                            <th scope="col">DELETE</th>
                                         </tr>
-                                    )
-                                })}
+                                    </thead>
+                                    <tbody>
+                                        {sellers.map((el, index) => {
+                                            let text = '', classic = '';
+                                            const in_ = index + 1;
+                                            if (el['id'] % 2 === 0) {
+                                                classic = 'cancelled';
+                                                text = 'Stopped';
+                                            }
+                                            if (el['id'] % 2 !== 0) {
+                                                classic = 'moving';
+                                                text = 'Active';
+                                            }
+                                            return (
+                                                /* moving  cancelled   pending*/
+                                                < tr className='warning' key={el['id']}>
+                                                    <th key={`${el['id']}row`} scope="row"><b>{in_}</b></th>
+                                                    <td key={`${el['id']}status`}>
+                                                        <div className={`tm-status-circle ${classic}`}></div>
+                                                        <code><em><b>{text}</b></em></code>
+                                                    </td>
+                                                    <td key={`${el['id']}name`}><b>{el['name']}</b></td>
+                                                    <td key={`${el['id']}username`}><b>{el['username']}</b></td>
+                                                    <td key={`${el['id']}password`}><b>{el['password']}</b></td>
+                                                    <td key={`${el['id']}`}><b>{el['refresh_token']}</b></td>
+                                                    <td key={`${el['id']}date`}>12:00, 22 NOV 2018</td>
+                                                    <td key={`${el['id']}btn`}><button>admin seller</button></td>
+                                                </tr>
+                                            )
+                                        })}
 
-                            </tbody>
-                        </table>
-                        :
-                        <div className="table settings-table-inner">
-                            {/* <button onClick={listSellers} className="btn btn-info btn-block"> Listar </button> */}
-                        </div>
-                    }
+                                    </tbody>
+                                </table>
+                                :
+                                <div className="table settings-table-inner">
+                                    {/* <button onClick={listSellers} className="btn btn-info btn-block"> Listar </button> */}
+                                </div>
+                            }
+                        </>}
                 </div>
             </div>
         </>

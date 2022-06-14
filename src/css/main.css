@@ -7,12 +7,12 @@
 @import url('./elements/a.css');
 @import url('./elements/h.css');
 
-
 @import url('./services/common/background.css');
 @import url('./services/common/buttons/btn1.css');
 @import url('./services/common/buttons/btn.css');
 @import url('./services/common/label.css');
 @import url('./services/common/loader.css');
+@import url('./services/common/loader-buttons.css');
 @import url('./services/common/alerts.css');
 
 /* LOGIN */

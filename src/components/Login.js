@@ -3,6 +3,7 @@ import useAuth from '../hooks/useAuth';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from '../api/axios';
 import Background from '../components/Background'
+import LoaderButtons from '../components/LoaderButtons'
 
 const LOGIN_URL = '/api/users';
 
@@ -10,6 +11,10 @@ function Login() {
    const { setAuth } = useAuth();
    const navigate = useNavigate();
    const location = useLocation();
+
+   const [isButtonPress, setIsButtonPress] = useState(false);
+   const [isButtonPress2, setIsButtonPress2] = useState(false);
+
    // const admin = location.state?.from?.pathname || "/admin";
    // const agent = location.state?.from?.pathname || "/agent";
    // const user__ = location.state?.from?.pathname || "/users";
@@ -40,7 +45,7 @@ function Login() {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-
+      setIsButtonPress(true);
       try {
          const response = await axios.post(LOGIN_URL,
             JSON.stringify({ user, pwd }),
@@ -60,6 +65,7 @@ function Login() {
 
          navigate(from, { replace: true });
       } catch (err) {
+         setIsButtonPress(false);
          if (!err?.response) { setErrMsg('No Server Response'); }
          else if (err.response?.status === 400) { setErrMsg('Missing Username or Password'); }
          else if (err.response?.status === 401) { setErrMsg('Unauthorized'); }
@@ -99,12 +105,15 @@ function Login() {
                   value={pwd}
                   required
                />
-
+               {isButtonPress ? <LoaderButtons /> : <></>}
                <button className='btn btn-success btn-block'>Sign In</button>
             </form>
             <hr />
-            {/* <button onClick={handleToAuth} className='btn btn-warning btn-block'>Seller Authorization</button> */}
-            <a href={`${urlFinal}`} className='btn btn-warning btn-block'><h5><sub>Seller Authorization</sub></h5></a>
+            {isButtonPress2 ? <LoaderButtons /> : <></>}
+            <a href={`${urlFinal}`} onClick={() => {
+               setIsButtonPress2(true);
+               setTimeout(() => setIsButtonPress2(false), 6000);
+            }} className='btn btn-warning btn-block'><h5><sub>Seller Authorization</sub></h5></a>
          </div>
       </>
    )
