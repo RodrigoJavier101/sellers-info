@@ -12,7 +12,7 @@ const Settings = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [sellers, setSellers] = useState([]);
-    const [msg, setMsg] = useState('');
+    // const [msg, setMsg] = useState('');
     const [isLoader, setIsLoader] = useState(true);
 
     const handleSubmit = async (e) => {
@@ -28,7 +28,7 @@ const Settings = () => {
                 { headers: { 'Content-Type': 'application/json' }, }
             );
             console.log(response?.data);
-            setMsg(response?.data)
+            // setMsg(response?.data)
             setFullname('');
             document.getElementById('input-fullname').value = '';
             setUsername('');
@@ -95,7 +95,6 @@ const Settings = () => {
                         <button className="btn btn-success btn-block"> ADD </button>
                     </form>
                     <hr />
-
                 </div>
                 <div className="settings-table-box">
                     {/* <h2 className="tm-block-title">Sellers List</h2> */}
@@ -117,6 +116,7 @@ const Settings = () => {
                             <tbody>
                                 {sellers.map((el, index) => {
                                     let text = '', classic = '';
+                                    const in_ = index + 1;
                                     if (el['id'] % 2 === 0) {
                                         classic = 'cancelled';
                                         text = 'Stopped';
@@ -128,7 +128,7 @@ const Settings = () => {
                                     return (
                                         /* moving  cancelled   pending*/
                                         < tr className='warning' key={el['id']}>
-                                            <th key={`${el['id']}row`} scope="row"><b>{index}</b></th>
+                                            <th key={`${el['id']}row`} scope="row"><b>{in_}</b></th>
                                             <td key={`${el['id']}status`}>
                                                 <div className={`tm-status-circle ${classic}`}></div>
                                                 <code><em><b>{text}</b></em></code>

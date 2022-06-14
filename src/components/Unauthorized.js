@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import Background from '../components/Background'
 
 const Unauthorized = () => {
     const navigate = useNavigate();
@@ -12,7 +13,8 @@ const Unauthorized = () => {
     const urlFinal = `${urlBase}/authorization?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}`;
 
     return (
-        <div className="section-unauth-body">
+        <>
+            <Background />
             <section className="section-unauth">
                 <h1 className="title_unauth">Unauthorized...</h1>
                 <br />
@@ -27,7 +29,8 @@ const Unauthorized = () => {
                     <button className="btn btn-danger btn-block" onClick={goBack}>Go Back to Login</button>
                 </div>
             </section>
-        </div>
+        </>
+
     )
 }
 

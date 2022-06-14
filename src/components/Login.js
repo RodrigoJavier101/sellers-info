@@ -104,7 +104,7 @@ function Login() {
             </form>
             <hr />
             {/* <button onClick={handleToAuth} className='btn btn-warning btn-block'>Seller Authorization</button> */}
-            <a href={`${urlFinal}`} className='btn btn-warning btn-block'>Seller Authorization</a>
+            <a href={`${urlFinal}`} className='btn btn-warning btn-block'><h5><sub>Seller Authorization</sub></h5></a>
          </div>
       </>
    )

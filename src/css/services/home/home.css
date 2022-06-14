@@ -26,7 +26,7 @@
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    box-shadow: -20px 26px 32px 14px #221f1f;
+    box-shadow: var(--shadow-home);
     border-radius: 15px;
 }
 
