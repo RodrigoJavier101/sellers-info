@@ -37,7 +37,6 @@ const Modal = ({ open, onClose, nRT, message, detentionStatus }) => {
             }} className="modalContainer">
 
                 <div className="modalRight">
-                    <p onClick={onClose} className="closeBtn">X</p>
                     <div className="content">
                         <h3>{nRT.nickname}</h3>
                         <p>{nRT.refresh_token}</p>
@@ -56,6 +55,13 @@ const Modal = ({ open, onClose, nRT, message, detentionStatus }) => {
                         <button className='btn btn-warning btn-block'>
                             Analize Data
                         </button>
+                    </div>
+                    <div className="">
+                        <center>
+                            <button onClick={onClose} className='btn btn-light'>
+                                CANCEL
+                            </button>
+                        </center>
                     </div>
                 </div>
             </div>
