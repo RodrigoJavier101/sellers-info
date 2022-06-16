@@ -13,7 +13,7 @@ const Settings = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [sellers, setSellers] = useState([]);
-    const [isButtonPress2, setIsButtonPress2] = useState(true);
+    // const [isButtonPress2, setIsButtonPress2] = useState(true);
     // const [msg, setMsg] = useState('');
     const [isLoader, setIsLoader] = useState(true);
 

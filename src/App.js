@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import Users from './components/users-zone/Users';
 import Admin from './components/admin-zone/Admin';
 import SellersList from './components/admin-zone/SellersList';
+import Reports from './components/admin-zone/Reports'
 import Settings from './components/admin-zone/Settings';
 import Accounts from './components/admin-zone/Accounts';
 import Events from './components/admin-zone/Events';
@@ -50,6 +51,7 @@ function App() {
                 <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
                     <Route path="admin" element={<Admin />} />
                     <Route path="sellers" element={<SellersList />} />
+                    <Route path="reports" element={<Reports />} />
                     <Route path="accounts" element={<Accounts />} />
                     <Route path="events" element={<Events />} />
                     <Route path="settings" element={<Settings />} />

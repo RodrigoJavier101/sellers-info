@@ -28,6 +28,7 @@
     /* sizes */
     --z-index-loader: 1000;
     /* shadows */
-    --shadow-login:-2px 5px 40px 20px #e9e6e6;
-    --shadow-home:-2px 5px 40px 20px #231e1e;
+    --shadow-login: -2px 5px 40px 20px #e9e6e6;
+    --shadow-home: -2px 5px 40px 20px #231e1e;
+    --shadow-modal-one: 0 0 18px 0 rgba(0, 0, 0, 0.75);
 }

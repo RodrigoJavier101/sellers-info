@@ -1,5 +1,5 @@
 import HeaderUser from './HeaderUser';
-import Loader from '../Loader';
+// import Loader from '../Loader';
 
 // (() => {
 //     $(window).on('load', function () {

@@ -35,6 +35,8 @@
 @import url('./services/unauthorized/unauthorized.css');
 @import url('./services/missing/missing.css');
 
+/* modal */
+@import url('./services/modal/modal-one.css');
 /* ELEMENTS */
 @import url('./services/tables/tables.css');
 

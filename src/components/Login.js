@@ -32,11 +32,11 @@ function Login() {
 
    const [user, setUser] = useState('');
    const [pwd, setPwd] = useState('');
-   const [errMsg, setErrMsg] = useState('');
+   // const [errMsg, setErrMsg] = useState('');
 
    useEffect(() => { userRef.current.focus(); }, [])
 
-   useEffect(() => { setErrMsg(''); }, [user, pwd])
+   // useEffect(() => { setErrMsg(''); }, [user, pwd])
 
    // const handleToAuth = (e) => {
    //    e.preventDefault();
@@ -66,10 +66,10 @@ function Login() {
          navigate(from, { replace: true });
       } catch (err) {
          setIsButtonPress(false);
-         if (!err?.response) { setErrMsg('No Server Response'); }
-         else if (err.response?.status === 400) { setErrMsg('Missing Username or Password'); }
-         else if (err.response?.status === 401) { setErrMsg('Unauthorized'); }
-         else { setErrMsg('Login Failed'); }
+         // if (!err?.response) { setErrMsg('No Server Response'); }
+         // else if (err.response?.status === 400) { setErrMsg('Missing Username or Password'); }
+         // else if (err.response?.status === 401) { setErrMsg('Unauthorized'); }
+         // else { setErrMsg('Login Failed'); }
          errRef.current.focus();
       }
    }

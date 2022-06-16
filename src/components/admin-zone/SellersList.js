@@ -3,10 +3,13 @@ import HeaderAdmin from './HeaderAdmin'
 import axios from '../../api/axios';
 import Background from '../Background'
 import Loader from '../Loader'
+import Modal from './modal/ModalOne'
 
 const SellersList = () => {
     const [isLoader, setIsLoader] = useState(true);
     const [grantedList, setGrantedList] = useState([]);
+    const [openModal, setOpenModal] = useState(false);
+
 
     const USERS_GRANTED_LIST = '/api/users/allGrantedUsersAdmin'
 
@@ -39,9 +42,11 @@ const SellersList = () => {
                                     <th> # </th>
                                     <th> ID </th>
                                     <th> NickName </th>
-                                    <th> Status </th>
+                                    <th> Global Status </th>
+                                    <th> Detention Status </th>
                                     <th> Registration Date </th>
                                     <th> Refresh Token </th>
+                                    <th> Validation </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,14 +66,20 @@ const SellersList = () => {
                                                 <div className={`tm-status-circle ${classic}`}></div>
                                                 <em><b className={textClass}>{textActive}</b></em>
                                             </td>
+                                            <td>
+                                                <div className={`tm-status-circle ${classic}`}></div>
+                                                <em><b className={textClass}>{textActive}</b></em>
+                                            </td>
                                             <td> <b>{el['registration_date'].split('T')[0]}</b> </td>
                                             <td> <b>{el['refresh_token']}</b> </td>
+                                            <td> <button onClick={() => setOpenModal(true)}>CLICK ME!!!</button> </td>
                                         </tr>
                                     )
                                 })}
                             </tbody>
                         </table>
                     </div>
+                    <Modal open={openModal} onClose={() => setOpenModal(false)} />
                 </>
             }
         </>
