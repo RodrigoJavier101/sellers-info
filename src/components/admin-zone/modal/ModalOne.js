@@ -1,6 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Modal = ({ open, onClose }) => {
+const Modal = ({ open, onClose, nRT, message, detentionStatus }) => {
+
+    let btnText = "";
+    let classBtn = "";
+
+    if (detentionStatus === "Stopped") {
+        btnText = "Start Seller";
+        classBtn = 'btn btn-success btn-block';
+    }
+
+    if (detentionStatus === "Running") {
+        btnText = "Stop Seller"
+        classBtn = 'btn btn-danger btn-block';
+    };
+
+    const pausedEffect = () => {
+        if (detentionStatus === "Stopped") toStart('Startting Seller')
+        if (detentionStatus === "Running") toStop('Stopping Seller')
+    }
+
+    const toStop = (m) => {
+        alert(m)
+    }
+
+    const toStart = (m) => {
+        alert(m)
+    }
+
     if (!open) return null;
     return (
         <div onClick={onClose} className='overlay'>
@@ -12,13 +39,21 @@ const Modal = ({ open, onClose }) => {
                 <div className="modalRight">
                     <p onClick={onClose} className="closeBtn">X</p>
                     <div className="content">
-                        <p>Hola</p>
+                        <h3>{nRT.nickname}</h3>
+                        <p>{nRT.refresh_token}</p>
+                        <p>{message}</p>
                     </div>
                     <div className="btnContainer">
-                        <button className='btn btn-danger btn-block'>
-                            Pause Seller
+
+                        <button
+                            onClick={() => {
+                                pausedEffect()
+                            }}
+                            className={classBtn}>
+                            {btnText}
                         </button>
-                        <button className='btn btn-success btn-block'>
+
+                        <button className='btn btn-warning btn-block'>
                             Analize Data
                         </button>
                     </div>

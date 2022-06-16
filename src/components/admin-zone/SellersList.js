@@ -9,7 +9,8 @@ const SellersList = () => {
     const [isLoader, setIsLoader] = useState(true);
     const [grantedList, setGrantedList] = useState([]);
     const [openModal, setOpenModal] = useState(false);
-
+    const [nickRT, setNickRT] = useState({ nickname: '', refresh_token: '' });
+    const [detentionStatus, setDetentionStatus] = useState('');
 
     const USERS_GRANTED_LIST = '/api/users/allGrantedUsersAdmin'
 
@@ -55,8 +56,20 @@ const SellersList = () => {
                                     let classic = '';
                                     let textClass = '';
                                     let textActive = '';
-                                    if (el['refresh_token'].length > 0) { classic = 'moving'; textClass = 'active-danger'; textActive = 'ACTIVE'; }
-                                    else { classic = 'cancelled'; textClass = 'inactive-danger'; textActive = 'INACTIVE'; }
+                                    let detStatus = '';
+
+                                    if (el['refresh_token'].length > 0) {
+                                        classic = 'moving';
+                                        textClass = 'active-danger';
+                                        textActive = 'ACTIVE';
+                                        detStatus = 'Running'; // debe estar en otra validacion en caso de alerta!!!!!
+                                    }
+                                    else {
+                                        classic = 'cancelled';
+                                        textClass = 'inactive-danger';
+                                        textActive = 'INACTIVE';
+                                        detStatus = 'Stopped';// debe estar en otra validacion en caso de alerta!!!!!
+                                    }
                                     return (
                                         <tr className='warning' key={`${index}`}>
                                             <td> {i} </td>
@@ -68,18 +81,25 @@ const SellersList = () => {
                                             </td>
                                             <td>
                                                 <div className={`tm-status-circle ${classic}`}></div>
-                                                <em><b className={textClass}>{textActive}</b></em>
+                                                <em><b className={textClass}>{detStatus}</b></em>
                                             </td>
                                             <td> <b>{el['registration_date'].split('T')[0]}</b> </td>
                                             <td> <b>{el['refresh_token']}</b> </td>
-                                            <td> <button onClick={() => setOpenModal(true)}>CLICK ME!!!</button> </td>
+                                            <td> <button onClick={() => {
+                                                setDetentionStatus(detStatus);
+                                                setNickRT({ nickname: el['nickname'], refresh_token: el['refresh_token'] });
+                                                setOpenModal(true);
+                                            }}>CLICK ME!!!</button> </td>
                                         </tr>
                                     )
                                 })}
                             </tbody>
                         </table>
                     </div>
-                    <Modal open={openModal} onClose={() => setOpenModal(false)} />
+                    <Modal open={openModal} 
+                    onClose={() => setOpenModal(false)} nRT={nickRT} message={"No Message for the moment"} 
+                    detentionStatus={detentionStatus} 
+                    />
                 </>
             }
         </>
