@@ -30,20 +30,20 @@ const SellersList = () => {
 
     if (isLoader) handleGrantedUsers();
 
-    useEffect(() => socket.on('receive_message', data => {
-        console.log(data, `_____----______---_______--____-----`);
-    }), [socket]);
+    // useEffect(() => socket.on('receive_message', data => {
+    //     console.log(data, `_____----______---_______--____-----`);
+    // }), [socket]);
 
 
 
-    // useEffect(() => {
-    //     const socket = ioClient(`https://back.sellers-info.cl`);
-    //     socket.connect();
-    //     socket.on('receive_message', data => {
-    //         console.log(data, `_____----______---_______--____-----`);
-    //     });
-    //     return () => socket.disconnect();
-    // });
+    useEffect(() => {
+        const socket = ioClient(`https://back.sellers-info.cl`);
+        socket.connect();
+        socket.on('receive_message', data => {
+            console.log(data, `_____----______---_______--____-----`);
+        });
+        return () => socket.disconnect();
+    });
 
     return (
         <>
