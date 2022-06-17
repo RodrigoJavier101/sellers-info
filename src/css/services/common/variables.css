@@ -17,14 +17,14 @@
     --table-text: #221c12;
     --table-text-hover: #306faa;
     /* images */
-    --bg-pic-airplane-url: url('../../../../public/images/oscuro.jpeg');
-    --bg-pic-icon-url: url('../../../../public/images/apple-icon-180x180.png');
-    --bg-pic-missing-url: url('../../../../public/images/slider-01.jpg');
-    --bg-pic-events-url: url('../../../../public/images/img-01.jpg');
-    --bg-pic-templatesmo-url: url('../../../../public/images/img-01.jpg');
+    --bg-pic-airplane-url: url('../../../images/oscuro.jpeg');
+    --bg-pic-icon-url: url('../../../images/apple-icon-180x180.png');
+    --bg-pic-missing-url: url('../../../images/slider-01.jpg');
+    --bg-pic-events-url: url('../../../images/img-01.jpg');
+    --bg-pic-templatesmo-url: url('../../../images/img-01.jpg');
     /* fonts */
-    --font-1: url('../../../../public/fonts/GowunBatang-Bold.ttf');
-    --font-2: url('../../../../public/fonts/Mukta-Light.ttf');
+    --font-1: url('../../../fonts/GowunBatang-Bold.ttf');
+    --font-2: url('../../../fonts/Mukta-Light.ttf');
     /* sizes */
     --z-index-loader: 1000;
     /* shadows */

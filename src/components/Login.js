@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import  React, { useRef, useState, useEffect } from 'react';
 import useAuth from '../hooks/useAuth';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from '../api/axios';
@@ -18,7 +18,12 @@ function Login() {
    // const admin = location.state?.from?.pathname || "/admin";
    // const agent = location.state?.from?.pathname || "/agent";
    // const user__ = location.state?.from?.pathname || "/users";
-   const from = location.state?.from?.pathname || "/home";
+   
+   
+   const from = "/home";
+   // const from = location.state?.from?.pathname || "/home";
+   
+   
    // const auth_to = location.state?.from?.pathname || "/auth";
 
    const urlBase = 'https://global-selling.mercadolibre.com';
@@ -52,9 +57,12 @@ function Login() {
             { headers: { 'Content-Type': 'application/json' }, }
          );
 
-         const accessToken = response?.data.refresh_token;
-         const roles = [response?.data.user_type];
-         const name = response?.data.name;
+         // const accessToken = response?.data.refresh_token;
+         const accessToken = response.data.refresh_token;
+         // const roles = [response?.data.user_type];
+         const roles = [response.data.user_type];
+         // const name = response?.data.name;
+         const name = response.data.name;
          setAuth({ user, pwd, roles, accessToken, name });
          setUser('');
          setPwd('');

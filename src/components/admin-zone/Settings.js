@@ -29,7 +29,8 @@ const Settings = () => {
                 }),
                 { headers: { 'Content-Type': 'application/json' }, }
             );
-            console.log(response?.data);
+            // console.log(response?.data);
+            console.log(response.data);
             // setMsg(response?.data)
             setFullname('');
             document.getElementById('input-fullname').value = '';
