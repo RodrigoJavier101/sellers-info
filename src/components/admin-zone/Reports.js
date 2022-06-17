@@ -6,53 +6,58 @@ import SelectUsers from './reports-components/SelectUsers'
 import axios from '../../api/axios';
 
 const Reports = () => {
-    const [mlcMensaje, setmlcMensaje] = useState([]);
-    const [isTablaDetalle, setisTablaDetalle] = useState(false);
+    // const [isTablaDetalle, setisTablaDetalle] = useState(false);
+    // const [mlcMensaje, setmlcMensaje] = useState([]);
+
     // const [cantItems, setcantItems] = useState('');
-    const [listUsers, setListusers] = useState([]);
-    const [listUsersDB, setListusersDB] = useState([]);
-    const [rToken, setrToken] = useState('');
-    const [mlc, setmlc] = useState('');
-    const [idUser, setidUser] = useState('');
-    const [nameUser, setnameUser] = useState('');
 
-    const getSellersList = async () => {
-        try {
-            return await axios.post(`/getAllUSers`)
-                .then(async res => {
-                    setListusers(res['data'][0]);
-                    setListusersDB(res['data'][1]);
-                })
-                .catch(err => console.log('error en axios server', err));
-        } catch (error) {
-            console.log(`error en el try catch`, error);
-        }
-    }
+    // const [listUsers, setListusers] = useState([]);
+    // const [listUsersDB, setListusersDB] = useState([]);
+    // const [rToken, setrToken] = useState('');
+    // const [mlc, setmlc] = useState('');
+    // const [idUser, setidUser] = useState('');
+    // const [nameUser, setnameUser] = useState('');
 
-    const getMlc = (e) => setmlc(e.target.value.trim());
+    // const getSellersList = async () => {
+    //     try {
+    //         return await axios.post(`/getAllUSers`)
+    //             .then(async res => {
+    //                 setListusers(res['data'][0]);
+    //                 setListusersDB(res['data'][1]);
+    //             })
+    //             .catch(err => console.log('error en axios server', err));
+    //     } catch (error) {
+    //         console.log(`error en el try catch`, error);
+    //     }
+    // }
 
-    const getidUser = (id) => setidUser(id);
+    // const getMlc = (e) => setmlc(e.target.value.trim());
+
+    // const getidUser = (id) => setidUser(id);
 
     const fetchSingleMkpl = async () => {
         try {
-            listUsersDB.forEach(el => {
-                if (el['user_id'] === idUser) setrToken(el['refresh_token']);
-            });
+            // listUsersDB.forEach(el => {
+            //     if (el['user_id'] === idUser) setrToken(el['refresh_token']);
+            // });
+
             // if (rToken && mlc && !(document.querySelector('#inputmlc').value === '')) {
-            if (rToken.length > 0) {
-                console.log(rToken, mlc);
-                await axios.post(`singleMkpl`, { params: { rToken, mlc, nameUser } })
-                    .then(async res => await setmlcMensaje(res['data'])).catch(err => console.log(err));
-                if (mlcMensaje) { setisTablaDetalle(true); }
-                // setrToken('');
-                // setnameUser('');
-                // setmlc('');
-            } else { console.log('?????'); }
+            // if (rToken.length > 0) {
+            // console.log(rToken, mlc);
+            // await axios.post(`singleMkpl`, { params: { rToken, mlc, nameUser } })
+            //     .then(async res => await setmlcMensaje(res['data'])).catch(err => console.log(err));
+            // if (mlcMensaje) { setisTablaDetalle(true); }
+
+            // setrToken('');
+            // setnameUser('');
+            // setmlc('');
+
+            // } else { console.log('?????'); }
         } catch (error) { console.log(`error 2`, error); }
     }
 
 
-    useEffect(() => getSellersList(), []);
+    // useEffect(() => getSellersList(), []);
 
     /*  useEffect(() => socket.on('recibe_num', data => {
         console.log(data);
@@ -92,18 +97,18 @@ const Reports = () => {
         <>
             <HeaderAdmin />
             <Background />
-           
+{/* 
             <div className='bigWrapper'>
                 <div align='center'>
                     <br />
                     <h1>Informes</h1>
                     <br />
-                    {/* <label htmlFor="">{idUser}</label><br />
-                  <label htmlFor="">{rToken}</label> */}
+                    <label htmlFor="">{idUser}</label><br />
+                    <label htmlFor="">{rToken}</label>
                 </div>
                 <div className='selectUsersCss wrap'>
                     <SelectUsers
-                        setnameUser={setnameUser} 
+                        setnameUser={setnameUser}
                         listUsers={listUsers}
                         getidUser={getidUser}
                         idUser={idUser}
@@ -123,9 +128,8 @@ const Reports = () => {
                         </div>
                     </div >
                 </header>
-                {/* <ChatSuper></ChatSuper> */}
-            </div>
-         
+            </div> */}
+
         </>
     )
 }

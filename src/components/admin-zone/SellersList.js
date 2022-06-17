@@ -21,7 +21,9 @@ const SellersList = () => {
         try {
             const response = await axios.post(USERS_GRANTED_LIST, { headers: { 'Content-Type': 'application/json' } })
             // setGrantedList(response?.['data'].sort((a, b) => a['refresh_token'] < b['refresh_token']));
-            setGrantedList(response['data'].sort((a, b) => a['refresh_token'] < b['refresh_token']));
+            if (response['data']) {
+                setGrantedList(response['data'].sort((a, b) => a['refresh_token'] < b['refresh_token']));
+            }
             setIsLoader(false);
         } catch (error) { console.log('ERROR GRANTED', error); }
     }
