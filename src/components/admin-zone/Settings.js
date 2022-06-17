@@ -30,7 +30,7 @@ const Settings = () => {
                 { headers: { 'Content-Type': 'application/json' }, }
             );
             // console.log(response?.data);
-            console.log(response.data);
+            //console.log(response.data);
             // setMsg(response?.data)
             setFullname('');
             document.getElementById('input-fullname').value = '';
@@ -39,7 +39,7 @@ const Settings = () => {
             setPassword('');
             document.getElementById('input-password').value = '';
 
-            const response_ = await axios.get(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
+            const response_ = await axios.post(LIST_URL, { headers: { 'Content-Type': 'application/json' }, });
             setSellers(response_['data']);
 
         } catch (error) { console.log(error); }
