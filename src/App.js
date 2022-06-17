@@ -31,8 +31,6 @@ function App() {
                 <Route path="auth" element={<Auth />} />
                 <Route path="/" element={<Login />} />
                 <Route path="unauthorized" element={<Unauthorized />} />
-                {/* catch all */}
-                <Route path="*" element={<Missing />} />
                 {/* Users Routes */}
                 <Route element={<RequireAuth allowedRoles={[ROLES.User, ROLES.Agent, ROLES.Admin]} />}>
                     <Route path="home" element={<Home />} />
@@ -56,7 +54,8 @@ function App() {
                     <Route path="events" element={<Events />} />
                     <Route path="settings" element={<Settings />} />
                 </Route>
-
+                {/* catch all */}
+                <Route path="*" element={<Missing />} />
             </Route>
         </Routes>
     );
