@@ -1,16 +1,11 @@
 import React from 'react'
 import HeaderAdmin from './HeaderAdmin'
-import { motion } from 'framer-motion/dist/framer-motion';
 
 const Admin = () => {
     return (
         <>
             <HeaderAdmin />
-            <motion.div id="main-collapse"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-            >
+            <div id="main-collapse">
                 {/* <Loader /> */}
                 <div className="" id="home">
                     <div className="container">
@@ -207,8 +202,7 @@ const Admin = () => {
                     </div>
 
                 </div>
-
-            </motion.div>
+            </div>
         </>
     )
 }

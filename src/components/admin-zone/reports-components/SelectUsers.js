@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from '../../../api/axios';
 
-const SelectUsers = ({ setnameUser, listUsers, getidUser, idUser, fetchSingleMkpl, getMlc, }) => {
+
+const SelectUsers = ({ listUsers }) => {
+    const SINGLE_MKPL = '/api/users/singleMkpl';
+
+    const [refresh, setRefresh] = useState('');
+    const [mlc, setMlc] = useState('DATO DE PRUEBA');
+
+    const fetchSingleMkpl = async () => {
+        try {
+            const rt = await axios.post(SINGLE_MKPL,
+                JSON.stringify({ refresh, mlc }),
+                { headers: { 'Content-Type': 'application/json' }, }
+            ).then(async res => res).catch(err => console.log(err));
+            console.log(`SECOND`, rt['data']);
+        } catch (error) { console.log(`error 2`, error); }
+    }
+
+
     return (
         <div className='selectUserwrapper'>
             <div className='selectWrapper'>
@@ -10,41 +28,30 @@ const SelectUsers = ({ setnameUser, listUsers, getidUser, idUser, fetchSingleMkp
                     name="selected"
                     id="selected"
                     onChange={e => {
-                        setnameUser(e.target.selectedOptions[0].innerText.trim())
-                        const name = e.target.selectedOptions[0].innerText.trim()
+                        const idName = e.target.selectedOptions[0].innerText.trim();
+                        const idNameSelected = parseInt(idName.split('/')[1].trim());
                         listUsers.forEach(value => {
-                            if (name.includes(value['nickname']))
-                                getidUser(`${String(value['id']).trim()}`);
+                            if (idNameSelected === (value['id'])) setRefresh(value['refresh_token']);
                         });
-                    }}>
+                    }}
+                >
                     <option
                         className='option_users'
                         value='Opciones'
                         key={`key`}
                         disabled >Seleccionar usuario</option>
-                    {/* {arrLista.map((value, index) => {
-                        return (<option className='optionSelectUsers' key={`${index}`}>{value}</option>);
-                    })} */}
+                    {listUsers.sort((a, b) => a['nickname'] > b['nickname']).map((value, index) => {
+                        return (<option className='optionSelectUsers' key={`${index}`}>{value['nickname']} / {value['id']}</option>);
+                    })}
                 </select>
+                <button type='button' onClick={fetchSingleMkpl}>Search</button>
             </div>
-            <div className='selectWrapper'>
-                <button
-                    className='button-selectuser-item'
-                    key={`buttonfetchsingle`}
-                    onClick={() => fetchSingleMkpl()}>
-                </button>
-                {/*  <ArrowLeft />
-           <a className="tooltip_" href="#!"><AddCircleSharp onClick={() => console.log('hola')} /><span className="tooltip-content_"><span className="tooltip-text_"><span className="tooltip-inner_">Click to reset table</span></span></span></a>
-           <label htmlFor="">&nbsp;&nbsp;Info de los ítems seleccionados</label><ArrowRight /><input className='inputSelectUser' onChange={(e) => {
-              getMlc(e)
-           }}
-              id='inputmlc' type="text" name="inputmkplitems" placeholder='Marketplace Items' />&nbsp;&nbsp; */}
-                {/* <button className='button-selectuser-item' onClick={() => {
-              fetchSingleMkpl()
-           }}><Search className='iconoboton' /></button> */}
-            </div>
-            <div align='center'>
-                {/* <label> __{cantItems}__ </label> */}
+            <div>
+                <center>
+                    <textarea name="mlc-text-area" id="mlc-text-area" cols="30" rows="10"
+                        onChange={e => { setMlc(e.target.value.trim()); }}
+                    ></textarea>
+                </center>
             </div>
         </div>
     )

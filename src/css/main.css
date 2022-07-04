@@ -30,6 +30,8 @@
 /* sellers list */
 @import url('./services/sellers-list/sellers-list.css');
 
+@import url('./services/select-users/select-users.css');
+
 /* home  unauthorized missing*/
 @import url('./services/home/home.css');
 @import url('./services/unauthorized/unauthorized.css');

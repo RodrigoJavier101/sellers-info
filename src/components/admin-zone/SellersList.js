@@ -4,9 +4,9 @@ import axios from '../../api/axios';
 import Background from '../Background'
 import Loader from '../Loader'
 import Modal from './modal/ModalOne'
-import ioClient from 'socket.io-client'
+// import ioClient from 'socket.io-client'
 
-const socket = ioClient.connect('https://back.sellers-info.cl');
+// const socket = ioClient.connect('https://back.sellers-info.cl');
 
 const SellersList = () => {
     const [isLoader, setIsLoader] = useState(true);
@@ -36,14 +36,14 @@ const SellersList = () => {
 
 
 
-    useEffect(() => {
-        const socket = ioClient(`https://back.sellers-info.cl`);
-        socket.connect();
-        socket.on('receive_message', data => {
-            console.log(data, `_____----______---_______--____-----`);
-        });
-        return () => socket.disconnect();
-    });
+    // useEffect(() => {
+    //     const socket = ioClient(`https://back.sellers-info.cl`);
+    //     socket.connect();
+    //     socket.on('receive_message', data => {
+    //         console.log(data, `_____----______---_______--____-----`);
+    //     });
+    //     return () => socket.disconnect();
+    // });
 
     return (
         <>
