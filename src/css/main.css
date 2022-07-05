@@ -32,6 +32,9 @@
 
 @import url('./services/select-users/select-users.css');
 
+@import url('./services/tablas/tablamkpl.css');
+
+
 /* home  unauthorized missing*/
 @import url('./services/home/home.css');
 @import url('./services/unauthorized/unauthorized.css');

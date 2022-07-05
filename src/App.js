@@ -1,12 +1,15 @@
 import React from 'react'
 import {Routes, Route, useLocation } from 'react-router-dom';
 import Users from './components/users-zone/Users';
+import ReportsUser from './components/users-zone/ReportsUser';
+import ProductsUser from './components/users-zone/ProductsUser';
 import Admin from './components/admin-zone/Admin';
 import SellersList from './components/admin-zone/SellersList';
 import Reports from './components/admin-zone/Reports'
 import Settings from './components/admin-zone/Settings';
 import Accounts from './components/admin-zone/Accounts';
 import Events from './components/admin-zone/Events';
+import AnalisisOper from './components/admin-zone/AnalisisOper';
 import Unauthorized from './components/Unauthorized';
 import RequireAuth from './components/RequireAuth';
 import Auth from './components/Auth';
@@ -15,8 +18,6 @@ import Layout from './components/Layout';
 import Home from './components/Home';
 import Login from './components/Login';
 import Missing from './components/Missing';
-import ReportsUser from './components/users-zone/ReportsUser';
-import ProductsUser from './components/users-zone/ProductsUser';
 
 const ROLES = { 'User': 334223112, 'Admin': 558861093, 'Agent': 221092534 }
 // const ROLES = { 'User': process.env.ROLE_USER, 'Admin': process.env.ROLE_ADMIN }
@@ -52,6 +53,7 @@ function App() {
                     <Route path="accounts" element={<Accounts />} />
                     <Route path="events" element={<Events />} />
                     <Route path="settings" element={<Settings />} />
+                    <Route path="analisis_operaciones" element={<AnalisisOper />} />
                 </Route>
                 {/* catch all */}
                 <Route path="*" element={<Missing />} />

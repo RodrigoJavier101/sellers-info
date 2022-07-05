@@ -106,11 +106,13 @@ const SellersList = () => {
                                             </td>
                                             <td> <b>{el['registration_date'].split('T')[0]}</b> </td>
                                             <td> <b>{el['refresh_token']}</b> </td>
-                                            <td> <button onClick={() => {
-                                                setDetentionStatus(detStatus);
-                                                setNickRT({ nickname: el['nickname'], refresh_token: el['refresh_token'] });
-                                                setOpenModal(true);
-                                            }}>CLICK ME!!!</button> </td>
+                                            <td>
+                                                <button onClick={() => {
+                                                    setDetentionStatus(detStatus);
+                                                    setNickRT({ nickname: el['nickname'], refresh_token: el['refresh_token'] });
+                                                    setOpenModal(true);
+                                                }}>CLICK ME!!!</button>
+                                            </td>
                                         </tr>
                                     )
                                 })}

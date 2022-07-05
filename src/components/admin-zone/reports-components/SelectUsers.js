@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import axios from '../../../api/axios';
+import TablaDatosMlc from '../reports-components/TablaDatosMlc'
 
 
-const SelectUsers = ({ listUsers }) => {
+const SelectUsers = ({ listUsers, setOpenModal, setRowD }) => {
     const SINGLE_MKPL = '/api/users/singleMkpl';
 
     const [refresh, setRefresh] = useState('');
-    const [mlc, setMlc] = useState('DATO DE PRUEBA');
+    const [mlc, setMlc] = useState('');
+    const [listOfMlc, setListOfMlc] = useState({});
 
     const fetchSingleMkpl = async () => {
         try {
@@ -14,10 +16,10 @@ const SelectUsers = ({ listUsers }) => {
                 JSON.stringify({ refresh, mlc }),
                 { headers: { 'Content-Type': 'application/json' }, }
             ).then(async res => res).catch(err => console.log(err));
-            console.log(`SECOND`, rt['data']);
+            setListOfMlc(rt['data']);
+            console.log(listOfMlc['items'])
         } catch (error) { console.log(`error 2`, error); }
     }
-
 
     return (
         <div className='selectUserwrapper'>
@@ -41,7 +43,8 @@ const SelectUsers = ({ listUsers }) => {
                         key={`key`}
                         disabled >Seleccionar usuario</option>
                     {listUsers.sort((a, b) => a['nickname'] > b['nickname']).map((value, index) => {
-                        return (<option className='optionSelectUsers' key={`${index}`}>{value['nickname']} / {value['id']}</option>);
+                        return (<option className='optionSelectUsers' key={`${index}`}>{value['nickname']} / {value['id']}
+                        </option>);
                     })}
                 </select>
                 <button type='button' onClick={fetchSingleMkpl}>Search</button>
@@ -52,6 +55,19 @@ const SelectUsers = ({ listUsers }) => {
                         onChange={e => { setMlc(e.target.value.trim()); }}
                     ></textarea>
                 </center>
+            </div>
+            <div>
+                {
+                    listOfMlc['items'] ?
+                        <TablaDatosMlc
+                            listOfMlc={listOfMlc}
+                            setOpenModal={setOpenModal}
+                            setRowD={setRowD}
+                            rToken={refresh}
+                        />
+                        :
+                        ''
+                }
             </div>
         </div>
     )

@@ -1,0 +1,124 @@
+.clearfix {
+   clear: both;
+   float: none;
+}
+
+/*css header*/
+#header {
+   width: 80%;
+   margin-left: 5%;
+   height: auto;
+}
+
+#header .h4-table {
+   display: block;
+   text-align: center;
+   line-height: auto;
+   transition: all 300ms;
+   cursor: pointer;
+   font-family: font-table;
+   font-size: 14px;
+}
+
+/*css tabla*/
+
+#tabla {
+   width: var(--size-width-100);
+   margin: 0 auto;
+   margin-top: 30px;
+   margin-bottom: 70px;
+   box-shadow: var(--shadow-border-tabla);
+   border-collapse: collapse;
+   cursor: pointer;
+}
+
+#tabla .th-table {
+   font-weight: bold;
+   padding: 12px;
+   background-color: var(--color-bright_yellow);
+   color: var(--color-dark0_soft);
+   transition: all 300ms;
+}
+
+#tabla .th-table:hover {
+   color: rgb(39, 25, 25);
+}
+
+#tabla .tr-table:nth-child(odd) {
+   background-color: var(--color-light0_hard);
+}
+
+/* .h4-table */
+#tabla .tr-table:hover .td-table {
+   /* color: var(--color-light0_hard); */
+   font-weight: bolder;
+   background: var(--color-divider);
+}
+
+#tabla .tr-table:nth-child(even) {
+   background-color: var(--color-light0_soft);
+}
+
+#tabla .td-table:first-child {
+   color: var(--color-neutral_red);
+   border: solid 1px;
+}
+
+#tabla .td-table {
+   text-align: center;
+   font-size: 12px;
+   width: auto;
+   padding: 10px;
+   color: var(--color-dark0_hard);
+}
+
+.first-line-tr-h {
+   font-family: header-tabla;
+   font-size: 12px;
+}
+
+.button-table {
+   background-color: var(--color-neutral_orange);
+}
+
+/*responsive*/
+
+@media only screen and (max-width: 700px), (max-device-width: 768px) and (max-device-width: 1024px) {
+
+   #header {
+      width: 100%;
+      display: block;
+   }
+
+   .wrap {
+      width: 100%;
+      height: auto;
+   }
+
+   #tabla {
+      display: block;
+      overflow-x: auto;
+      width: 100%;
+      margin-top: 0;
+      top: 0px;
+   }
+
+   #tabla td {
+      font-size: 10px;
+      padding: 21px;
+   }
+
+   #tabla .th-table {
+      font-size: 10px;
+      padding: 0;
+      height: 46px;
+   }
+
+   #header h3 {
+      font-size: 12px;
+   }
+}
+
+.inputGone {
+   display: none;
+}
