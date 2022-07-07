@@ -35,7 +35,6 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
         })
     }
 
-
     const captureDataRow = (indice) => {
         listOfMlc['items'].forEach((el, indi) => {
             if (indi === indice) {
@@ -70,24 +69,24 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
                 </div>
                 <table id='tabla' key={`tablekeymain`}>
                     <thead key={`keytehead`}>
-                        <tr className='tr-table'><th colSpan="100%"><h4 className='first-line-tr-h'>Datos items seleccionados</h4></th></tr>
+                        <tr className='tr-table'><th colSpan="100%"><h6 className='first-line-tr-h'>Datos items seleccionados</h6></th></tr>
                         <tr className='tr-table' key={`keyheader`}>
-                            <th className='th-table' key={`keyth1`}><h4 className='h4-table'>N`</h4 ></th >
+                            <th className='th-table' key={`keyth1`}><h6 className='h6-table'>N`</h6 ></th >
                             <th className='th-table' key={`keyth111`}><input id={`checkDetailTable`}
                                 onClick={capturarCheckUSD} type="checkbox" name=""
                             /></th>
-                            <th className='th-table' key={`keyth2`}><h4 className='h4-table'>mlc</h4></th>
-                            <th className='th-table' key={`keyth3`}><h4 className='h4-table'>cbt parent</h4></th>
-                            <th className='th-table' key={`keyth4`}><h4 className='h4-table'>invent id</h4></th>
-                            <th className='th-table' key={`keyth5`}><h4 className='h4-table'>invent id var</h4></th>
-                            <th className='th-table' key={`keyth6`}><h4 className='h4-table'>cant avail</h4></th>
-                            <th className='th-table' key={`keyth7`}><h4 className='h4-table'>cant avail var</h4></th>
-                            <th className='th-table' key={`keyth8`}><h4 className='h4-table'>cant sold</h4></th>
-                            <th className='th-table' key={`keyth9`}><h4 className='h4-table'>cant sold var</h4></th>
-                            <th className='th-table' key={`keyth10`}><h4 className='h4-table'>price</h4></th>
-                            <th className='th-table' key={`keyth11`}><h4 className='h4-table'>price var</h4></th>
-                            <th className='th-table' key={`keyth12`}><h4 className='h4-table'>status</h4></th>
-                            <th className='th-table' key={`keyth13`}><h4 className='h4-table'>Analize</h4></th>
+                            <th className='th-table' key={`keyth2`}><h6 className='h6-table'>mlc</h6></th>
+                            <th className='th-table' key={`keyth3`}><h6 className='h6-table'>cbt parent</h6></th>
+                            <th className='th-table' key={`keyth4`}><h6 className='h6-table'>invent id</h6></th>
+                            <th className='th-table' key={`keyth5`}><h6 className='h6-table'>invent id var</h6></th>
+                            <th className='th-table' key={`keyth6`}><h6 className='h6-table'>cant avail</h6></th>
+                            <th className='th-table' key={`keyth7`}><h6 className='h6-table'>cant avail var</h6></th>
+                            <th className='th-table' key={`keyth8`}><h6 className='h6-table'>cant sold</h6></th>
+                            <th className='th-table' key={`keyth9`}><h6 className='h6-table'>cant sold var</h6></th>
+                            <th className='th-table' key={`keyth10`}><h6 className='h6-table'>price</h6></th>
+                            <th className='th-table' key={`keyth11`}><h6 className='h6-table'>price var</h6></th>
+                            <th className='th-table' key={`keyth12`}><h6 className='h6-table'>status</h6></th>
+                            <th className='th-table' key={`keyth13`}><h6 className='h6-table'>Analize</h6></th>
                         </tr >
                     </thead >
                     <tbody key={`keybody_`} id={`keybody`}>
@@ -104,7 +103,7 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
                                         const [key, value] = entry
                                         if (key === 'bbb_id') return (
                                             <td className='td-table' id={`bbb_id${index}`} key={`bbb_id${index}`}>
-                                                <h4 className='h4-table' key={`h4bbb_id${value}`}>
+                                                <h6 className='h6-table' key={`h6bbb_id${value}`}>
                                                     <span className="tooltip tooltip-effect-3">
                                                         <span className="tooltip-item">
                                                             <a href={putPermaLink(index)} target='blank_'>{value}
@@ -118,18 +117,18 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
                                                             </span>
                                                         </span>
                                                     </span>
-                                                </h4>
+                                                </h6>
                                             </td>)
-                                        if (key === 'ccc_cbt_item_id') return (<td className='td-table' id={`ccc_cbt_item_id${index}`} key={`ccc_cbt_item_id${index}`}><h4 className='h4-table' key={`h4ccc_cbt_item_id${value}`} id={`h4ccc_cbt_item_id${value}`}>{value}</h4></td>)
-                                        if (key === 'ddd_inventory_id') return (<td className='td-table' id={`ddd_inventory_id${index}`} key={`ddd_inventory_id${index}`}><h4 className='h4-table' key={`h4ddd_inventory_id${value}`} id={`h4ddd_inventory_id${value}`}>{value}</h4></td>)
-                                        if (key === 'eee_variations_inventory_id') return (<td className='td-table' id={`eee_variations_inventory_id${index}`} key={`eee_variations_inventory_id${index}`}><h4 className='h4-table' key={`h4eee_variations_inventory_id${index}`} id={`h4eee_variations_inventory_id${index}`}>{value}</h4></td>)
-                                        if (key === 'fff_available_quantity') return (<td className='td-table' id={`fff_available_quantity${index}`} key={`fff_available_quantity${index}`}><h4 className='h4-table' key={`h4fff_available_quantity${index}`} id={`h4fff_available_quantity${index}`}>{value}</h4></td>)
-                                        if (key === 'ggg_variations_available_quantity') return (<td className='td-table' id={`ggg_variations_available_quantity${index}`} key={`ggg_variations_available_quantity${index}`}><h4 className='h4-table' key={`h4ggg_variations_available_quantity${index}`} id={`h4ggg_variations_available_quantity${index}`}>{value}_</h4></td>)
-                                        if (key === 'hhh_sold_quantity') return (<td className='td-table' id={`hhh_sold_quantity${index}`} key={`hhh_sold_quantity${index}`}><h4 className='h4-table' key={`h4hhh_sold_quantity${index}`} id={`h4hhh_sold_quantity${index}`}>{value}</h4></td>)
-                                        if (key === 'iii_variations_sold_quantity') return (<td className='td-table' id={`iii_variations_sold_quantity${index}`} key={`iii_variations_sold_quantity${index}`}><h4 className='h4-table' key={`h4iii_variations_sold_quantity${index}`} id={`h4iii_variations_sold_quantity${index}`}>{value}_</h4></td>)
-                                        if (key === 'jjj_price') return (<td className='td-table' id={`jjj_price${index}`} key={`jjj_price${index}`}><h4 className='h4-table' key={`h4jjj_price${index}`} id={`h4jjj_price${index}`}><strong>$</strong>{value}</h4></td>)
-                                        if (key === 'kkk_variations_price') return (<td className='td-table' id={`kkk_variations_price${index}`} key={`kkk_variations_price${index}`}><h4 className='h4-table' key={`h4kkk_variations_price${index}`} id={`h4kkk_variations_price${index}`}><strong>$</strong>{value}</h4></td>)
-                                        if (key === 'status') return (<td className='td-table' id={`status${index}`} key={`status${index}`}><h4 className='h4-table' key={`status${index}`} id={`status${index}`}><strong></strong>{value}</h4></td>)
+                                        if (key === 'ccc_cbt_item_id') return (<td className='td-table' id={`ccc_cbt_item_id${index}`} key={`ccc_cbt_item_id${index}`}><h6 className='h6-table' key={`h6ccc_cbt_item_id${value}`} id={`h6ccc_cbt_item_id${value}`}>{value}</h6></td>)
+                                        if (key === 'ddd_inventory_id') return (<td className='td-table' id={`ddd_inventory_id${index}`} key={`ddd_inventory_id${index}`}><h6 className='h6-table' key={`h6ddd_inventory_id${value}`} id={`h6ddd_inventory_id${value}`}>{value}</h6></td>)
+                                        if (key === 'eee_variations_inventory_id') return (<td className='td-table' id={`eee_variations_inventory_id${index}`} key={`eee_variations_inventory_id${index}`}><h6 className='h6-table' key={`h6eee_variations_inventory_id${index}`} id={`h6eee_variations_inventory_id${index}`}>{value}</h6></td>)
+                                        if (key === 'fff_available_quantity') return (<td className='td-table' id={`fff_available_quantity${index}`} key={`fff_available_quantity${index}`}><h6 className='h6-table' key={`h6fff_available_quantity${index}`} id={`h6fff_available_quantity${index}`}>{value}</h6></td>)
+                                        if (key === 'ggg_variations_available_quantity') return (<td className='td-table' id={`ggg_variations_available_quantity${index}`} key={`ggg_variations_available_quantity${index}`}><h6 className='h6-table' key={`h6ggg_variations_available_quantity${index}`} id={`h6ggg_variations_available_quantity${index}`}>{value}_</h6></td>)
+                                        if (key === 'hhh_sold_quantity') return (<td className='td-table' id={`hhh_sold_quantity${index}`} key={`hhh_sold_quantity${index}`}><h6 className='h6-table' key={`h6hhh_sold_quantity${index}`} id={`h6hhh_sold_quantity${index}`}>{value}</h6></td>)
+                                        if (key === 'iii_variations_sold_quantity') return (<td className='td-table' id={`iii_variations_sold_quantity${index}`} key={`iii_variations_sold_quantity${index}`}><h6 className='h6-table' key={`h6iii_variations_sold_quantity${index}`} id={`h6iii_variations_sold_quantity${index}`}>{value}_</h6></td>)
+                                        if (key === 'jjj_price') return (<td className='td-table' id={`jjj_price${index}`} key={`jjj_price${index}`}><h6 className='h6-table' key={`h6jjj_price${index}`} id={`h6jjj_price${index}`}><strong>$</strong>{value}</h6></td>)
+                                        if (key === 'kkk_variations_price') return (<td className='td-table' id={`kkk_variations_price${index}`} key={`kkk_variations_price${index}`}><h6 className='h6-table' key={`h6kkk_variations_price${index}`} id={`h6kkk_variations_price${index}`}><strong>$</strong>{value}</h6></td>)
+                                        if (key === 'status') return (<td className='td-table' id={`status${index}`} key={`status${index}`}><h6 className='h6-table' key={`status${index}`} id={`status${index}`}><strong></strong>{value}</h6></td>)
                                     })}<td className='td-table' key={`keytabla`}>
                                         <button type='button' onClick={() => { captureDataRow(index); }}>CLICK</button>
                                     </td></tr>)

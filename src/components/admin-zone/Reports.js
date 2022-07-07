@@ -23,14 +23,14 @@ const Reports = () => {
     const getOperations = async () => {
         const from = "/analisis_operaciones";
 
-        
+
         const operaciones = await axios.post(GET_OPERATIONS,
             JSON.stringify({ usr_id: rowD['user_id'], sell_Id: rowD['seller_id'], inventID: rowD['inventory_id'], refToken: rowD['rToken'], mkpl_id: rowD['mlc_id'] }),
             { headers: { 'Content-Type': 'application/json' }, }
         );
-       
+
         console.log(`OPERACIONES`, operaciones);
-        
+
         navigate(from, { replace: true });
     }
 
@@ -55,6 +55,9 @@ const Reports = () => {
                 :
                 <>
                     <div className="sellers-list-box">
+                        <h4 className='title_settings'>
+                            Reports
+                        </h4>
                         <div>
                             <SelectUsers
                                 listUsers={listUsers}
