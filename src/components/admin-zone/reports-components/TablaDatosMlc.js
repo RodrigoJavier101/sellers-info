@@ -98,6 +98,7 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD, rToken }) => {
                                     <td className='td-table' key={`keyindexcheckbox`}>
                                         <input className='input-ckeck' id={`checkDetailTable${index}`} type="checkbox" name="" />
                                     </td>
+                                   
                                     {Object.entries(valor).map((entry) => {
                                         const [key, value] = entry
                                         if (key === 'bbb_id') return (
