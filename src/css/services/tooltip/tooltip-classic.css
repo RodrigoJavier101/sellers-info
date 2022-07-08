@@ -1,0 +1,104 @@
+.tooltip {
+   display: inline;
+   position: relative;
+   z-index: var(--z-index-tooltip1);
+}
+
+/* Trigger text */
+
+.tooltip-item {
+   /* background: rgba(226, 217, 217, 0.7); */
+   cursor: pointer;
+   display: inline-block;
+   /* font-weight: 100; */
+   padding: 10px 10px;
+}
+
+.tooltip-item:hover {
+   color: var(--color-faded_blue);
+   /* font-weight: 900; */
+}
+
+/* Gap filler */
+
+.tooltip-item::after {
+   content: '';
+   position: absolute;
+   width: 360px;
+   height: 20px;
+   bottom: 100%;
+   left: 50%;
+   pointer-events: none;
+   -webkit-transform: translateX(-50%);
+   transform: translateX(-50%);
+}
+
+.tooltip:hover .tooltip-item::after {
+   pointer-events: auto;
+}
+
+/* Tooltip */
+
+.tooltip-content {
+   position: absolute;
+   z-index: var(--z-index-tooltip2);
+   width: 400px;
+   left: 300%;
+   margin: 10px 10px 20px -180px;
+   bottom: 100%;
+   text-align: left;
+   font-size: 1.9em;
+   line-height: 1.4;
+   box-shadow: var(--shadow-border-tooltip);
+   background: var(--color-faded_yellow);
+   background: rgba(84, 218, 218, 0.9);
+   opacity: 0;
+   cursor: default;
+   pointer-events: none;
+}
+
+
+.tooltip-effect-3 .tooltip-content {
+   -webkit-transform: translate3d(0, 10px, 0) rotate3d(1, 1, 0, 25deg);
+   transform: translate3d(0, 10px, 0) rotate3d(1, 1, 0, 25deg);
+   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+   transition: opacity 0.3s, transform 0.3s;
+}
+
+
+.tooltip:hover .tooltip-content {
+   pointer-events: auto;
+   opacity: 1;
+   -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+   transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+}
+
+/* Arrow */
+
+.tooltip-content::after {
+   content: '';
+   top: 100%;
+   left: 50%;
+   border: solid transparent;
+   height: 0;
+   width: 0;
+   position: absolute;
+   pointer-events: none;
+   border-color: transparent;
+   border-top-color: #2a3035;
+   border-width: 10px;
+   margin-left: -10px;
+}
+
+.tooltip-text {
+   font-size: 0.68em;
+   font-family: tooltip-font;
+   line-height: 1.35;
+   display: block;
+   padding: 1.31em 1.21em 1.21em 0;
+   color: var(--color-dark0_hard);
+}
+
+.tooltip-text a {
+   font-weight: bold;
+}

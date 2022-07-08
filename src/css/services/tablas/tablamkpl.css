@@ -51,7 +51,7 @@
 /* .h4-table */
 #tabla .tr-table:hover .td-table {
    /* color: var(--color-light0_hard); */
-   font-weight: bolder;
+   /* font-weight: bolder; */
    background: var(--color-divider);
 }
 

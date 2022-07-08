@@ -1,0 +1,105 @@
+.tooltip_ {
+   display: inline;
+   position: relative;
+   z-index: var(--z-index-tooltip1);
+}
+
+/* Gap filler */
+.tooltip_::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 20px;
+   bottom: 100%;
+   left: 50%;
+   pointer-events: none;
+   -webkit-transform: translateX(-50%);
+   transform: translateX(-50%);
+}
+
+.tooltip_:hover::after {
+   pointer-events: auto;
+}
+
+/* Tooltip */
+
+.tooltip-content_ {
+   position: absolute;
+   z-index: var(--z-index-tooltip2);
+   width: 300px;
+   left: 50%;
+   bottom: 100%;
+   font-size: 20px;
+   line-height: 1.4;
+   text-align: center;
+   font-weight: 400;
+   color: #fffaf0;
+   background: transparent;
+   opacity: 0;
+   margin: 0 0 20px -150px;
+   cursor: default;
+   pointer-events: none;
+   -webkit-font-smoothing: antialiased;
+   -webkit-transition: opacity 0.3s 0.3s;
+   transition: opacity 0.3s 0.3s;
+}
+
+.tooltip_:hover .tooltip-content_ {
+   opacity: 1;
+   pointer-events: auto;
+   -webkit-transition-delay: 0s;
+   transition-delay: 0s;
+}
+
+.tooltip-content_ .span-tooltip {
+   display: block;
+}
+
+.tooltip-text_ {
+   border-bottom: 10px solid #fffaf0;
+   overflow: hidden;
+   -webkit-transform: scale3d(0, 1, 1);
+   transform: scale3d(0, 1, 1);
+   -webkit-transition: -webkit-transform 0.3s 0.3s;
+   transition: transform 0.3s 0.3s;
+}
+
+.tooltip_:hover .tooltip-text_ {
+   -webkit-transition-delay: 0s;
+   transition-delay: 0s;
+   -webkit-transform: scale3d(1, 1, 1);
+   transform: scale3d(1, 1, 1);
+}
+
+.tooltip-inner_ {
+   background: rgba(85, 61, 61, 0.95);
+   padding: 40px;
+   -webkit-transform: translate3d(0, 100%, 0);
+   transform: translate3d(0, 100%, 0);
+   -webkit-transition: -webkit-transform 0.3s;
+   transition: transform 0.3s;
+}
+
+.tooltip_:hover .tooltip-inner_ {
+   -webkit-transition-delay: 0.3s;
+   transition-delay: 0.3s;
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+}
+
+/* Arrow */
+
+.tooltip-content_::after {
+   content: '';
+   bottom: -20px;
+   left: 50%;
+   border: solid transparent;
+   height: 0;
+   width: 0;
+   position: absolute;
+   pointer-events: none;
+   border-color: transparent;
+   border-top-color: #fffaf0;
+   border-width: 10px;
+   margin-left: -10px;
+}

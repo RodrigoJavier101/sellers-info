@@ -33,6 +33,8 @@
 @import url('./services/select-users/select-users.css');
 
 @import url('./services/tablas/tablamkpl.css');
+@import url('./services/tooltip/tooltip-classic.css');
+@import url('./services/tooltip/tooltip-line.css');
 
 
 /* home  unauthorized missing*/

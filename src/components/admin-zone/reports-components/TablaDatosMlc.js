@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
+const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD, rToken }) => {
 
     const putPermaLink = (index) => {
         const link = listOfMlc['items'].map((el, indi) => {
@@ -38,25 +38,25 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
     const captureDataRow = (indice) => {
         listOfMlc['items'].forEach((el, indi) => {
             if (indi === indice) {
-               if (el['ddd_inventory_id'] === '-')
-                  setRowD({
-                     inventory_id: `${el['eee_variations_inventory_id']}`,
-                     mlc_id: `${el['bbb_id']}`,
-                     rToken: `${rToken}`,
-                     seller_id: `${el['seller_id']}`,
-                     user_id: `${el['mmm_owner_id']}`
-                  })
-               if (el['eee_variations_inventory_id'] === '-')
-                  setRowD({
-                     inventory_id: `${el['ddd_inventory_id']}`,
-                     mlc_id: `${el['bbb_id']}`,
-                     rToken: `${rToken}`,
-                     seller_id: `${el['seller_id']}`,
-                     user_id: `${el['mmm_owner_id']}`
-                  })
+                if (el['ddd_inventory_id'] === '-')
+                    setRowD({
+                        inventory_id: `${el['eee_variations_inventory_id']}`,
+                        mlc_id: `${el['bbb_id']}`,
+                        rToken: `${rToken}`,
+                        seller_id: `${el['seller_id']}`,
+                        user_id: `${el['mmm_owner_id']}`
+                    })
+                if (el['eee_variations_inventory_id'] === '-')
+                    setRowD({
+                        inventory_id: `${el['ddd_inventory_id']}`,
+                        mlc_id: `${el['bbb_id']}`,
+                        rToken: `${rToken}`,
+                        seller_id: `${el['seller_id']}`,
+                        user_id: `${el['mmm_owner_id']}`
+                    })
             }
-         });
-         setOpenModal(true);
+        });
+        setOpenModal(true);
     }
 
     return (
@@ -69,7 +69,6 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
                 </div>
                 <table id='tabla' key={`tablekeymain`}>
                     <thead key={`keytehead`}>
-                        <tr className='tr-table'><th colSpan="100%"><h6 className='first-line-tr-h'>Datos items seleccionados</h6></th></tr>
                         <tr className='tr-table' key={`keyheader`}>
                             <th className='th-table' key={`keyth1`}><h6 className='h6-table'>N`</h6 ></th >
                             <th className='th-table' key={`keyth111`}><input id={`checkDetailTable`}
@@ -79,10 +78,10 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
                             <th className='th-table' key={`keyth3`}><h6 className='h6-table'>cbt parent</h6></th>
                             <th className='th-table' key={`keyth4`}><h6 className='h6-table'>invent id</h6></th>
                             <th className='th-table' key={`keyth5`}><h6 className='h6-table'>invent id var</h6></th>
-                            <th className='th-table' key={`keyth6`}><h6 className='h6-table'>cant avail</h6></th>
-                            <th className='th-table' key={`keyth7`}><h6 className='h6-table'>cant avail var</h6></th>
-                            <th className='th-table' key={`keyth8`}><h6 className='h6-table'>cant sold</h6></th>
-                            <th className='th-table' key={`keyth9`}><h6 className='h6-table'>cant sold var</h6></th>
+                            <th className='th-table' key={`keyth6`}><h6 className='h6-table'>quant avail</h6></th>
+                            <th className='th-table' key={`keyth7`}><h6 className='h6-table'>quant avail var</h6></th>
+                            <th className='th-table' key={`keyth8`}><h6 className='h6-table'>quant sold</h6></th>
+                            <th className='th-table' key={`keyth9`}><h6 className='h6-table'>quant sold var</h6></th>
                             <th className='th-table' key={`keyth10`}><h6 className='h6-table'>price</h6></th>
                             <th className='th-table' key={`keyth11`}><h6 className='h6-table'>price var</h6></th>
                             <th className='th-table' key={`keyth12`}><h6 className='h6-table'>status</h6></th>
@@ -106,10 +105,9 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
                                                 <h6 className='h6-table' key={`h6bbb_id${value}`}>
                                                     <span className="tooltip tooltip-effect-3">
                                                         <span className="tooltip-item">
-                                                            <a href={putPermaLink(index)} target='blank_'>{value}
-                                                            </a></span>
+                                                            <a href={putPermaLink(index)} target='blank_'>{value}</a>
+                                                        </span>
                                                         <span className="tooltip-content clearfix">
-                                                            {/* <img src="img/Euclid.png" alt='Imagen'></img> */}
                                                             <span className="tooltip-text">
                                                                 {
                                                                     putDataRow(index)
@@ -129,9 +127,11 @@ const TablaDatosMlc = ({ listOfMlc, setOpenModal, setRowD , rToken}) => {
                                         if (key === 'jjj_price') return (<td className='td-table' id={`jjj_price${index}`} key={`jjj_price${index}`}><h6 className='h6-table' key={`h6jjj_price${index}`} id={`h6jjj_price${index}`}><strong>$</strong>{value}</h6></td>)
                                         if (key === 'kkk_variations_price') return (<td className='td-table' id={`kkk_variations_price${index}`} key={`kkk_variations_price${index}`}><h6 className='h6-table' key={`h6kkk_variations_price${index}`} id={`h6kkk_variations_price${index}`}><strong>$</strong>{value}</h6></td>)
                                         if (key === 'status') return (<td className='td-table' id={`status${index}`} key={`status${index}`}><h6 className='h6-table' key={`status${index}`} id={`status${index}`}><strong></strong>{value}</h6></td>)
-                                    })}<td className='td-table' key={`keytabla`}>
+                                    })}
+                                    <td className='td-table' key={`keytabla`}>
                                         <button type='button' onClick={() => { captureDataRow(index); }}>CLICK</button>
-                                    </td></tr>)
+                                    </td>
+                                </tr>)
                         })}
                     </tbody>
                 </table >

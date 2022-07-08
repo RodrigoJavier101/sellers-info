@@ -22,9 +22,9 @@ const Agent = () => {
     if (isLoading) handleGrantedUsers();
 
     return (
-        <> 
+        <>
             <HeaderAgent />
-            <Background />      
+            <Background />
             {isLoading
                 ?
                 <Loader />
@@ -32,7 +32,8 @@ const Agent = () => {
                 <>
                     <div className="sellers-list-box">
                         <h4 className='title_settings'>
-                            Total Granted Sellers ({grantedList.length})
+                            Total ({grantedList.length})
+                            ,  Actives ({grantedList.filter((el) => el['refresh_token'].length > 0).length})
                             ,  Inactives ({grantedList.filter((el) => el['refresh_token'].length === 0).length})
                         </h4>
                         <table className="table table-hover table-bordered">
@@ -56,7 +57,18 @@ const Agent = () => {
                                     return (
                                         <tr className='warning' key={`${index}`}>
                                             <td> {i} </td>
-                                            <td> <b>{el['id']}</b> </td>
+                                            <td>
+                                                <span className="tooltip tooltip-effect-3">
+                                                    <span className="tooltip-item">
+                                                        <b>{el['id']}</b>
+                                                    </span>
+                                                    <span className="tooltip-content clearfix">
+                                                        <span className="tooltip-text">
+                                                            {`${el['sellerId'].length > 0 ? `Seller id: ${el['sellerId']}` : 'Without seller ids'}`}
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </td>
                                             <td> <b>{el['nickname']}</b> </td>
                                             <td>
                                                 <div className={`tm-status-circle ${classic}`}></div>

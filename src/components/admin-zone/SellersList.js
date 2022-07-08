@@ -94,7 +94,18 @@ const SellersList = () => {
                                     return (
                                         <tr className='warning' key={`${index}`}>
                                             <td> {i} </td>
-                                            <td> <b>{el['id']}</b> </td>
+                                            <td>
+                                                <span className="tooltip tooltip-effect-3">
+                                                    <span className="tooltip-item">
+                                                        <b>{el['id']}</b>
+                                                    </span>
+                                                    <span className="tooltip-content clearfix">
+                                                        <span className="tooltip-text">
+                                                            {`${el['sellerId'].length > 0 ? `Seller id: ${el['sellerId']}` : 'Without seller ids'}`}
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </td>
                                             <td> <b>{el['nickname']}</b> </td>
                                             <td>
                                                 <div className={`tm-status-circle ${classic}`}></div>
