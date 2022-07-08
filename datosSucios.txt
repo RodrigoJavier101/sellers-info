@@ -1,0 +1,554 @@
+ <div className="" id="home">
+                    <div className="container">
+                        <div className="col-12 tm-block-col">
+                            <h2 className='tm-block-title'>Charts Administrator</h2>
+
+                            {/* 
+
+ <div>
+                                <h2 className="tm-block-title">Sellers List</h2>
+                                <table className="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">ORDER NO.</th>
+                                            <th scope="col">STATUS</th>
+                                            <th scope="col">OPERATORS</th>
+                                            <th scope="col">LOCATION</th>
+                                            <th scope="col">DISTANCE</th>
+                                            <th scope="col">START DATE</th>
+                                            <th scope="col">EST DELIVERY DUE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><b>#122349</b></th>
+                                            <td>
+                                                <div className="tm-status-circle moving">
+                                                </div>Moving
+                                            </td>
+                                            <td><b>Oliver Trag</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>485 km</b></td>
+                                            <td>16:00, 12 NOV 2018</td>
+                                            <td>08:00, 18 NOV 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122348</b></th>
+                                            <td>
+                                                <div className="tm-status-circle pending">
+                                                </div>Pending
+                                            </td>
+                                            <td><b>Jacob Miller</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>360 km</b></td>
+                                            <td>11:00, 10 NOV 2018</td>
+                                            <td>04:00, 14 NOV 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122347</b></th>
+                                            <td>
+                                                <div className="tm-status-circle cancelled">
+                                                </div>Cancelled
+                                            </td>
+                                            <td><b>George Wilson</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>340 km</b></td>
+                                            <td>12:00, 22 NOV 2018</td>
+                                            <td>06:00, 28 NOV 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122346</b></th>
+                                            <td>
+                                                <div className="tm-status-circle moving">
+                                                </div>Moving
+                                            </td>
+                                            <td><b>William Aung</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>218 km</b></td>
+                                            <td>15:00, 10 NOV 2018</td>
+                                            <td>09:00, 14 NOV 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122345</b></th>
+                                            <td>
+                                                <div className="tm-status-circle pending">
+                                                </div>Pending
+                                            </td>
+                                            <td><b>Harry Ryan</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>280 km</b></td>
+                                            <td>15:00, 11 NOV 2018</td>
+                                            <td>09:00, 17 NOV 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122344</b></th>
+                                            <td>
+                                                <div className="tm-status-circle pending">
+                                                </div>Pending
+                                            </td>
+                                            <td><b>Michael Jones</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>218 km</b></td>
+                                            <td>18:00, 12 OCT 2018</td>
+                                            <td>06:00, 18 OCT 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122343</b></th>
+                                            <td>
+                                                <div className="tm-status-circle moving">
+                                                </div>Moving
+                                            </td>
+                                            <td><b>Timmy Davis</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>218 km</b></td>
+                                            <td>12:00, 10 OCT 2018</td>
+                                            <td>08:00, 18 OCT 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122342</b></th>
+                                            <td>
+                                                <div className="tm-status-circle moving">
+                                                </div>Moving
+                                            </td>
+                                            <td><b>Oscar Phyo</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>420 km</b></td>
+                                            <td>15:30, 06 OCT 2018</td>
+                                            <td>09:30, 16 OCT 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122341</b></th>
+                                            <td>
+                                                <div className="tm-status-circle moving">
+                                                </div>Moving
+                                            </td>
+                                            <td><b>Charlie Brown</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>300 km</b></td>
+                                            <td>11:00, 10 OCT 2018</td>
+                                            <td>03:00, 14 OCT 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122340</b></th>
+                                            <td>
+                                                <div className="tm-status-circle cancelled">
+                                                </div>Cancelled
+                                            </td>
+                                            <td><b>Wilson Cookies</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>218 km</b></td>
+                                            <td>17:30, 12 OCT 2018</td>
+                                            <td>08:30, 22 OCT 2018</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><b>#122339</b></th>
+                                            <td>
+                                                <div className="tm-status-circle moving">
+                                                </div>Moving
+                                            </td>
+                                            <td><b>Richard Clamon</b></td>
+                                            <td><b>London, UK</b></td>
+                                            <td><b>150 km</b></td>
+                                            <td>15:00, 12 OCT 2018</td>
+                                            <td>09:20, 26 OCT 2018</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+*/}
+
+
+
+
+
+
+
+                        </div>
+
+                        <div className="row tm-content-row">
+                            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                                <div className="tm-bg-primary-dark tm-block">
+                                    <h2 className="tm-block-title">Latest Hits</h2>
+                                    <canvas id="lineChart"></canvas>
+                                </div>
+                            </div>
+
+                            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                                <div className="tm-bg-primary-dark tm-block">
+                                    <h2 className="tm-block-title">Performance</h2>
+                                    <canvas id="barChart"></canvas>
+                                </div>
+                            </div>
+                            <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 tm-block-col">
+                                <div className="tm-bg-primary-dark tm-block tm-block-taller">
+                                    <h2 className="tm-block-title">Storage Information</h2>
+                                    <div id="pieChartContainer">
+                                        <canvas id="pieChart" className="chartjs-render-monitor" width="200" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  {/* <Loader /> */}
+        <div className="" id="home">
+          {/* <div className="container"> */}
+          {/* <div id="main-collapse"> */}
+          {/* <div className="" id="home">
+                <div className="container">
+                  <div className="col-12 tm-block-col"> */}
+
+          {/* <div className="hero-full-wrapper"> */}
+
+          <div className="events" id="events-section">
+
+            <div className="content-wrapper">
+              <div className="inner-container container-fluid">
+
+                <div className="row">
+
+                  <div className="col-md-12 col-sm-12">
+
+                    <div className="section-heading">
+
+                      <div className="filter-categories">
+                        <ul className="project-filter">
+                          <li className="filter" data-filter="all"><span>Show All</span></li>
+                          <li className="filter" data-filter="design"><span>Design Meeting</span></li>
+                          <li className="filter" data-filter="start"><span>App Start Up</span></li>
+                          <li className="filter" data-filter="web"><span>Web Conferences</span></li>
+                        </ul>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div className="col-md-10 col-sm-12 col-md-offset-1">
+                    <div className="projects-holder">
+                      <div className="event-list">
+                        <ul>
+
+                          <li className="project-item first-child mix web">
+                            <ul className="event-item web">
+
+                              <li>
+                                <div className="date">
+                                  <span>12<br />May</span>
+                                </div>
+                              </li>
+
+                              <li>
+                                <h4>four loko franzen</h4>
+                                <div className="web">
+                                  <span>Web Conferences</span>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div className="time">
+                                  <span>8:00 AM - 11:00 AM<br />Saturday</span>
+                                </div>
+                              </li>
+
+                              <li>
+                                <div className="white-button">
+                                  <a href="!#">I am interested</a>
+                                </div>
+                              </li>
+
+                            </ul>
+                          </li>
+
+                          <li className="project-item second-child mix design">
+                            <ul className="event-item design">
+                              <li>
+                                <div className="date">
+                                  <span>24<br />April</span>
+                                </div>
+                              </li>
+                              <li>
+                                <h4>Drink vinegar coloring</h4>
+                                <div className="design">
+                                  <span>Design Meeting</span>
+                                </div>
+                              </li>
+                              <li>
+                                <div className="time">
+                                  <span>03:00 PM - 07:00 PM<br />Tuesday</span>
+                                </div>
+                              </li>
+                              <li>
+                                <div className="white-button">
+                                  <a href="!#">I am interested</a>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li className="project-item third-child mix start design">
+                            <ul className="event-item start">
+                              <li>
+                                <div className="date">
+                                  <span>30<br />Mar</span>
+                                </div>
+                              </li>
+                              <li>
+                                <h4>core hammock stiller</h4>
+                                <div className="app">
+                                  <span>App Start Up, Design Meeting</span>
+                                </div>
+                              </li>
+                              <li>
+                                <div className="time">
+                                  <span>03:30 PM - 09:30 PM<br />Friday</span>
+                                </div>
+                              </li>
+                              <li>
+                                <div className="white-button">
+                                  <a href="!#">I am interested</a>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li className="project-item fourth-child mix web">
+                            <ul className="event-item web">
+                              <li>
+                                <div className="date">
+                                  <span>22<br />Mar</span>
+                                </div>
+                              </li>
+                              <li>
+                                <h4>palo santo art party</h4>
+                                <div className="web">
+                                  <span>Web Conferences</span>
+                                </div>
+                              </li>
+                              <li>
+                                <div className="time">
+                                  <span>10:00 AM - 05:00 PM<br />Thursday</span>
+                                </div>
+                              </li>
+                              <li>
+                                <div className="white-button">
+                                  <a href="!#">I am interested</a>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+
+                          <li className="project-item fivth-child mix start web">
+                            <ul className="event-item start">
+                              <li>
+                                <div className="date">
+                                  <span>16<br />Mar</span>
+                                </div>
+                              </li>
+                              <li>
+                                <h4>Paleo craft beer copper</h4>
+                                <div className="app">
+                                  <span>App Start Up, Web Conferences</span>
+                                </div>
+                              </li>
+                              <li>
+                                <div className="time">
+                                  <span>11:30 AM - 04:30 PM<br />Friday</span>
+                                </div>
+                              </li>
+                              <li>
+                                <div className="white-button">
+                                  <a href="!#">I am interested</a>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          {/* </div> */}
+
+
+
+          {/* </div>
+                </div>
+              </div> */}
+          {/* </div> */}
+          {/* </div> */}
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <div className="" id="home">
+                    <div className="container">
+                        <div id="main-collapse">
+                            <div className="" id="home">
+                                <div className="container">
+                                    <div className="col-12 tm-block-col">
+                                        <h2 className='tm-block-title'>Accounts</h2>
+                                        <div className="section layout_padding">
+                                            <div className="container">
+                                                <div className="row margin-top_30">
+
+                                                    <div className="col-sm-6 col-md-4">
+                                                        <div className="service_blog">
+                                                            <div className="service_icons">
+                                                                <img width="75" height="75" src="../images/img-01.jpg" alt="#"></img>
+                                                            </div>
+                                                            <div className="full">
+                                                                <h4>DIGITAL marketing</h4>
+                                                            </div>
+                                                            <div className="full">
+                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                                                    Ipsum
+                                                                    has been the industry's standard dummy text ever since</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="col-sm-6 col-md-4">
+                                                        <div className="service_blog">
+                                                            <div className="service_icons">
+                                                                <img width="75" height="75" src="../images/img-01.jpg" alt="#"></img>
+                                                            </div>
+                                                            <div className="full">
+                                                                <h4>DIGITAL marketing</h4>
+                                                            </div>
+                                                            <div className="full">
+                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                                                    Ipsum
+                                                                    has been the industry's standard dummy text ever since</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="col-sm-6 col-md-4">
+                                                        <div className="service_blog">
+                                                            <div className="service_icons">
+                                                                <img width="75" height="75" src="../images/img-01.jpg" alt="#"></img>
+                                                            </div>
+                                                            <div className="full">
+                                                                <h4>DIGITAL marketing</h4>
+                                                            </div>
+                                                            <div className="full">
+                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                                                    Ipsum
+                                                                    has been the industry's standard dummy text ever since</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div className="col-sm-6 col-md-4">
+                                                        <div className="service_blog">
+                                                            <div className="service_icons">
+                                                                <img width="75" height="75" src="../images/img-01.jpg" alt="#"></img>
+                                                            </div>
+                                                            <div className="full">
+                                                                <h4>DIGITAL marketing</h4>
+                                                            </div>
+                                                            <div className="full">
+                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                                                    Ipsum
+                                                                    has been the industry's standard dummy text ever since</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="col-sm-6 col-md-4">
+                                                        <div className="service_blog">
+                                                            <div className="service_icons">
+                                                                <img width="75" height="75" src="../images/img-01.jpg" alt="#"></img>
+                                                            </div>
+                                                            <div className="full">
+                                                                <h4>DIGITAL marketing</h4>
+                                                            </div>
+                                                            <div className="full">
+                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                                                    Ipsum
+                                                                    has been the industry's standard dummy text ever since</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="col-sm-6 col-md-4">
+                                                        <div className="service_blog">
+                                                            <div className="service_icons">
+                                                                <img width="75" height="75" src="../images/img-01.jpg" alt="#"></img>
+                                                            </div>
+                                                            <div className="full">
+                                                                <h4>DIGITAL marketing</h4>
+                                                            </div>
+                                                            <div className="full">
+                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                                                    Ipsum
+                                                                    has been the industry's standard dummy text ever since</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

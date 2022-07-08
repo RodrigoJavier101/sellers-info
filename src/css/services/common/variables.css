@@ -1,41 +1,38 @@
 :root {
-    /* main colors */
-    --html-color: #fff;
-    --navbar-togglebtn-color: dodgerblue;
-    --bg-main: dodgerblue;
-    --bg-header-user: #75b4dc;
-    --bg-header-admin: #fef073;
-    --bg-header-admin-username: dodgerblue;
-    --bg-header-agent: #bc9229;
-    --bg-login-form: #04456d;
-    --bg-unauth: #04456d;
-    --bg-settings-form: #04456d;
-    --bg-home-section: #04456d;
-    --bg-missing-article: #6f4d0e;
-    --bg-unauth-section: #cabca2;
-    --table-border-color: #415a70;
-    --table-text: #221c12;
-    --table-text-hover: #306faa;
-    /* images */
-    --bg-pic-airplane-url: url('../../../images/oscuro.jpeg');
-    --bg-pic-icon-url: url('../../../images/apple-icon-180x180.png');
-    --bg-pic-missing-url: url('../../../images/slider-01.jpg');
-    --bg-pic-events-url: url('../../../images/img-01.jpg');
-    --bg-pic-templatesmo-url: url('../../../images/img-01.jpg');
-    /* fonts */
-    --font-1: url('../../../fonts/GowunBatang-Bold.ttf');
-    --font-2: url('../../../fonts/Mukta-Light.ttf');
-    /* sizes */
-    --z-index-loader: 1000;
-    /* shadows */
-    --shadow-login: -2px 5px 40px 20px #e9e6e6;
-    --shadow-home: -2px 5px 40px 20px #231e1e;
-    --shadow-modal-one: 0 0 18px 0 rgba(0, 0, 0, 0.75);
-
-
-
-     /* COLORES */
+  /* COLORES */
+  --html-color: #fff;
+  --white: #e9e6e6;
+  --navbar-togglebtn-color: dodgerblue;
+  --bg-main: dodgerblue;
+  --bg-header-user: #75b4dc;
+  --bg-header-admin: #fef073;
+  --bg-header-admin-username: dodgerblue;
+  --bg-header-agent: #bc9229;
+  --bg-login-form: #04456d;
+  --bg-unauth: #04456d;
+  --bg-settings-form: #04456d;
+  --bg-home-section: #04456d;
+  --bg-missing-article: #6f4d0e;
+  --bg-missing-article1: #a76a99;
+  --bg-unauth-section: #cabca2;
+  --table-border-color: #415a70;
+  --table-text: #221c12;
+  --table-text1: #411b57;
+  --table-text-hover: #306faa;
+  --default: #777;
+  --default2: #5e5e5e;
+  --primary: #ff6360;
+  --primary2: #ff312d;
+  --success: #5cb85c;
+  --success2: #449d44;
+  --info: #f8bb56;
+  --info2: #f6a725;
+  --warning: #f0ad4e;
+  --warning2: #ec971f;
+  --danger: #d9534f;
+  --danger2: #c9302c;
   --color-faded_red: #9d0006;
+  --color-faded_red2: #fb2525;
   --color-faded_green: #79740e;
   --color-faded_yellow: #b57614;
   --color-faded_blue: #076678;
@@ -45,6 +42,7 @@
   --color-neutral_red: #cc241d;
   --color-neutral_green: #98971a;
   --color-neutral_yellow: #d79921;
+  --color-neutral_yellow2: #ffc107;
   --color-neutral_blue: #458588;
   --color-neutral_purple: #b16286;
   --color-neutral_aqua: #689d6a;
@@ -56,7 +54,6 @@
   --color-bright_purple: #d3869b;
   --color-bright_aqua: #8ec07c;
   --color-bright_orange: #fe8019;
-  /* colores ligth */
   --color-light0_hard: #f9f5d7;
   --color-light0: #fbf1c7;
   --color-light0_soft: #f2e5bc;
@@ -65,36 +62,67 @@
   --color-light3: #bdae93;
   --color-light4: #a89984;
   --color-light4_256: #a89984;
-  /* colores dark */
   --color-dark0_hard: #1d2021;
   --color-dark0: #282828;
+  --color-dark01: #2a3035;
   --color-dark0_soft: #32302f;
   --color-dark1: #3c3836;
   --color-dark2: #504945;
   --color-dark3: #665c54;
   --color-dark4: #7c6f64;
   --color-dark4_256: #7c6f64;
-  /* colores gray */
   --color-gray_245: #928374;
   --color-gray_244: #928374;
   --color-divider: #b3e05f;
-  /* ------ */
-  /* SHADOWS */
-  --shadow-border-tabla: 0px 0px 12px 8px rgba(0, 0, 0, 0.36);
-  --shadow-border-menu: 5px 8px 12px 7px rgba(0, 0, 0, 0.36);
-  --shadow-border-tooltip: 10px 12px 12px 7px rgba(0, 0, 0, 0.5);
-  /* MEDIDAs */
-  --size-font-title: 1.5em;
-  --size-width-100: 70%;
-  --size-line-height-90px: 90px;
-  /* TiEMPOs */
 
-  /* z index */
+  /* Colores con transparencia */
+  --black-trans: rgba(0, 0, 0, 0.5);
+  --blue-trans: rgba(84, 218, 218, 0.9);
+
+  /* images */
+  --bg-pic-airplane-url: url('../../../images/oscuro.jpeg');
+  --bg-pic-icon-url: url('../../../images/apple-icon-180x180.png');
+  --bg-pic-missing-url: url('../../../images/slider-01.jpg');
+  --bg-pic-events-url: url('../../../images/img-01.jpg');
+  --bg-pic-templatesmo-url: url('../../../images/img-01.jpg');
+  /* fonts */
+  --font-1: url('../../../fonts/GowunBatang-Bold.ttf');
+  --font-2: url('../../../fonts/Mukta-Light.ttf');
+
+  /* Z index */
+  --z-index-loader: 1000;
+  --z-index-loader-buttons: 1000;
+  --z-index-sidebar: 1001;
+  --z-index-modalOne: 1000;
+
   --z-index-menu: 7;
   --z-index-boton-menu: 5;
   --z-index-loading-1: 15;
   --z-index-loading-2: 20;
-  --z-index-loader:1000;
-  --z-index-tooltip1:3;
-  --z-index-tooltip2:4;
+  --z-index-loader: 1000;
+  --z-index-tooltip1: 3;
+  --z-index-tooltip2: 4;
+
+  /* shadows */
+  --shadow-login: -2px 5px 40px 20px #e9e6e6;
+  --shadow-home: -2px 5px 40px 20px #231e1e;
+  --shadow-modal-one: 0 0 18px 0 rgba(0, 0, 0, 0.75);
+
+  /* SHADOWS */
+  --shadow-border-tabla: 0px 0px 12px 8px rgba(0, 0, 0, 0.36);
+  --shadow-border-menu: 5px 8px 12px 7px rgba(0, 0, 0, 0.36);
+  --shadow-border-tooltip: 10px 12px 12px 7px rgba(0, 0, 0, 0.5);
+  --shadow-login-form: 0 0 50px #0f0, 0 0 100px #0f0, 0 0 150px #0f0, 0 0 200px #0f0, 0 0 250px #0f0;
+  --shadow-table-inner: -20px 26px 32px 14px #221f1f;
+
+  /* MEDIDAs */
+  --size-font-title: 1.5em;
+  --size-width-100: 70%;
+  --size-line-height-90px: 90px;
+
+  /* Font SIZES */
+  --font-size1: 25px;
+  /* TiEMPOs */
+
+
 }

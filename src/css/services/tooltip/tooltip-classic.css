@@ -51,7 +51,7 @@
    line-height: 1.4;
    box-shadow: var(--shadow-border-tooltip);
    background: var(--color-faded_yellow);
-   background: rgba(84, 218, 218, 0.9);
+   background: var(--blue-trans);
    opacity: 0;
    cursor: default;
    pointer-events: none;
@@ -85,7 +85,7 @@
    position: absolute;
    pointer-events: none;
    border-color: transparent;
-   border-top-color: #2a3035;
+   border-top-color: var(--color-dark0);
    border-width: 10px;
    margin-left: -10px;
 }

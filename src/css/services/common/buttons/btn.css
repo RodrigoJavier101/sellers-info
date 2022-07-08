@@ -157,7 +157,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
     border-color: #5cb85c
 }
 
-.btn-success., .btn-success:focus {
+.btn-success, .btn-success:focus {
     color: #fff;
     background-color: #449d44;
     border-color: #2d672d

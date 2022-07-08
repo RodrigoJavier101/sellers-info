@@ -9,8 +9,6 @@
 	z-index: var(--z-index-loader);
 }
 
-
-
 .ul-loader {
 	position: absolute;
 	top: 50%;

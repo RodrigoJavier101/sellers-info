@@ -2,7 +2,7 @@
     width: 900px;
     height: 420px;
     /* background: var(--bg-settings-form); */
-    color: #fff;
+    color: var(--white);
     top: 35%;
     left: 70%;
     position: absolute;
@@ -12,6 +12,6 @@
 }
 
 .settings-table-inner {
-    box-shadow: -20px 26px 32px 14px #221f1f;
+    box-shadow: var(--shadow-table-inner);
     border-radius: 15px;
 }
